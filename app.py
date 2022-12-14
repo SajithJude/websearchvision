@@ -27,8 +27,8 @@ if url:
     responses = request.execute()
     try:
         x = responses['responses'][0]['webDetection']['fullMatchingImages']
-        y = responses['responses'][0]['webDetection']['partialMatchingImages']
-        z = responses['responses'][0]['webDetection']['pagesWithMatchingImages']
+        # y = responses['responses'][0]['webDetection']['partialMatchingImages']
+        # z = responses['responses'][0]['webDetection']['pagesWithMatchingImages']
         w = responses['responses'][0]['webDetection']['visuallySimilarImages']
         f = responses['responses'][0]['webDetection']['bestGuessLabels']
     
@@ -36,17 +36,17 @@ if url:
         st.write("An exception occurred")
    
     new = pd.DataFrame(x)
-    ne = pd.DataFrame(y)
-    n = pd.DataFrame(z)
+    # ne = pd.DataFrame(y)
+    # n = pd.DataFrame(z)
     wn = pd.DataFrame(w)
     st.write("keywords  :"+str(f))
 
     st.text("Full matching ")
     st.dataframe(new)
-    st.text("Partial matching ")
-    st.dataframe(ne)
-    st.text("Pages with matching ")
-    st.dataframe(n)
+    # st.text("Partial matching ")
+    # st.dataframe(ne)
+    # st.text("Pages with matching ")
+    # st.dataframe(n)
     st.text("Visually similar matching ")
     st.dataframe(n)    
     
