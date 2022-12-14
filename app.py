@@ -4,11 +4,11 @@ import os
 
 
 url = st.text_input("enter url")
-
+APIKEY = os.environ["API_KEY"] 
+IMAGE= url
+vservice = build('vision', 'v1', developerKey=APIKEY)
 if st.button("submit"):
-    APIKEY = os.environ["API_KEY"] 
-    IMAGE= url
-    vservice = build('vision', 'v1', developerKey=APIKEY)
+
     request = vservice.images().annotate(body={
             'requests': [{
                     'image': {
@@ -26,5 +26,5 @@ if st.button("submit"):
 
     # print(js.formatter.format(responses))
     st.text(x)
-    
+
     
