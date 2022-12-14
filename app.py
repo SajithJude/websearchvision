@@ -25,6 +25,8 @@ if url:
     x = responses['responses'][0]['webDetection']['fullMatchingImages']
 
     # print(js.formatter.format(responses))
-    st.text(x)
+    st.write(responses)
+    st.write(x)
+
 
     
