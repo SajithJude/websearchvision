@@ -6,7 +6,8 @@ import pandas as pd
 
 url = st.text_input("enter url")
 APIKEY = os.environ["API_KEY"] 
-IMAGE= str(url, width=250)
+IMAGE= str(url)
+st.image(IMAGE, width=250)
 vservice = build('vision', 'v1', developerKey=APIKEY)
 if url:
 
