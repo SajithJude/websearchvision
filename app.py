@@ -22,7 +22,7 @@ if url:
                     }]
                 }],
             })
-    responses = request.execute(num_retries=2)
+    responses = request.execute()
     x = responses['responses'][0]['webDetection']['fullMatchingImages']
 
     # print(js.formatter.format(responses))
