@@ -26,10 +26,11 @@ if url:
             })
     responses = request.execute()
     x = responses['responses'][0]['webDetection']['fullMatchingImages']
-
+    new = pd.DataFrame(x)
+    st.dataframe(new)
     # print(js.formatter.format(responses))
     st.write(responses)
-    st.write(x)
+    # st.write(x)
 
 
     
