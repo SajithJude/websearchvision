@@ -36,7 +36,7 @@ if url:
     # st.write("An exception occurred")
 
     new = pd.DataFrame(x)
-    # ne = pd.DataFrame(y)
+    ne = pd.DataFrame(responses)
     # n = pd.DataFrame(z)
     # wn = pd.DataFrame(w)
     # st.write("keywords  :"+str(f))
@@ -44,7 +44,7 @@ if url:
     st.text("Full matching ")
     st.dataframe(new)
     # st.text("Partial matching ")
-    # st.dataframe(ne)
+    st.dataframe(ne)
     # st.text("Pages with matching ")
     # st.dataframe(n)
     # st.text("Visually similar matching ")
