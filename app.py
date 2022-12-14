@@ -5,7 +5,7 @@ import os
 
 url = st.text_input("enter url")
 APIKEY = os.environ["API_KEY"] 
-IMAGE= url
+IMAGE= str(url)
 vservice = build('vision', 'v1', developerKey=APIKEY)
 if st.button("submit"):
 
