@@ -26,8 +26,26 @@ if url:
             })
     responses = request.execute()
     x = responses['responses'][0]['webDetection']['fullMatchingImages']
+    y = responses['responses'][0]['webDetection']['partialMatchingImages']
+    z = responses['responses'][0]['webDetection']['pagesWithMatchingImages']
+    w = responses['responses'][0]['webDetection']['visuallySimilarImages']
+    
     new = pd.DataFrame(x)
+    ne = pd.DataFrame(y)
+    n = pd.DataFrame(z)
+    wn = pd.DataFrame(w)
+
+
+    st.text("Full matching ")
     st.dataframe(new)
+    st.text("Partial matching ")
+    st.dataframe(ne)
+    st.text("Pages with matching ")
+    st.dataframe(n)
+    st.text("Visually similar with matching ")
+    st.dataframe(n)    
+    
+
     # print(js.formatter.format(responses))
     st.write(responses)
     # st.write(x)
