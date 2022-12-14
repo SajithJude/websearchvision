@@ -23,11 +23,11 @@ if url:
                 }],
             })
     responses = request.execute(num_retries=2)
-    # x = responses['responses'][0]['webDetection']['fullMatchingImages']
+    x = responses['responses'][0]['webDetection']['fullMatchingImages']
 
     # print(js.formatter.format(responses))
     st.write(responses)
-    # st.wrisdste(x)
+    st.write(x)
 
 
     
