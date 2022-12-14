@@ -29,12 +29,13 @@ if url:
     y = responses['responses'][0]['webDetection']['partialMatchingImages']
     z = responses['responses'][0]['webDetection']['pagesWithMatchingImages']
     w = responses['responses'][0]['webDetection']['visuallySimilarImages']
+    f = responses['responses'][0]['webDetection']['bestGuessLabels']
     
     new = pd.DataFrame(x)
     ne = pd.DataFrame(y)
     n = pd.DataFrame(z)
     wn = pd.DataFrame(w)
-
+    st.write("keywords  :"+str(f))
 
     st.text("Full matching ")
     st.dataframe(new)
@@ -42,7 +43,7 @@ if url:
     st.dataframe(ne)
     st.text("Pages with matching ")
     st.dataframe(n)
-    st.text("Visually similar with matching ")
+    st.text("Visually similar matching ")
     st.dataframe(n)    
     
 
