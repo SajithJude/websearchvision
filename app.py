@@ -36,7 +36,7 @@ if url:
     # st.write("An exception occurred")
 
     new = pd.DataFrame(x)
-    ne = pd.DataFrame(responses['responses'][0]['webDetection'])
+    ne = pd.DataFrame(st.json(responses))
     # n = pd.DataFrame(z)
     # wn = pd.DataFrame(w)
     # st.write("keywords  :"+str(f))
