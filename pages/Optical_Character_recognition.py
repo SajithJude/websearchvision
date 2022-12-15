@@ -73,12 +73,12 @@ else:
         try:
             info = result['responses'][0]['textAnnotations'][0]['description']
             st.image(img)
-            st.write("Detected Text Results From uploaded Image")
+            st.text("#Detected Text Results From uploaded Image")
             st.write(info)
 
         except: 
             st.write("An exception occurred")
-            st.write("##API response Body")
+            st.text("##API response Body")
             st.write(result)
         
 
