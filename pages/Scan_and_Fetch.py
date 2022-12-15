@@ -79,7 +79,7 @@ else:
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-002",
-        prompt="Explain the information in the given urls " + pageinfo[:1]['url'] + " .",
+        prompt="Explain the information in the given urls " + pageinfo['url'] + " .",
         temperature=0.56,
         max_tokens=3500,
         top_p=1,
