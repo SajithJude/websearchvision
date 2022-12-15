@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import requests
 import json
 import os
+import base64
+
 
 #@st.cache 
 
@@ -17,14 +19,16 @@ def draw_bbox(image):
     headers = {'Content-Type': 'application/json'}
 
     # make image data
-    image_data = b64_to_imagebytes(image)
+    # image_data = b64_to_imagebytes(image)
+    image_data = base64.b64encode(image.read())
+
 
     # construct request body
     body = {
         'requests': [
             {
                 'image': {
-                    'content': image_data
+                    'content': image_data.decode('utf-8')
                 },
                 'features': [
                     {
