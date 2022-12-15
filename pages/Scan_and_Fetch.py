@@ -96,10 +96,6 @@ else:
             st.header("Image annotation")
             st.write(gl)
 
-            # st.write(annotation['surpriseLikelihood'])
-
-            # st.image("https://static.streamlit.io/examples/cat.jpg")
-
         with col2:
             st.header("Detected Entities")
             st.write(ent)
@@ -108,7 +104,7 @@ else:
 
         link = map(lambda pageinfo: pageinfo['url'], pageinfo)
         lnk = ' '.join(link)
-        st.write(link)
+        st.write(link[0])
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-002",
