@@ -37,7 +37,7 @@ def callAPI(image):
 
     # Read the response in json format
 
-    return responses
+    return responses.json()
 
 
 if cam =='Open Webcam':
