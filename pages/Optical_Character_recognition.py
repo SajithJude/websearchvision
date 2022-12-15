@@ -4,6 +4,7 @@ import requests
 import json
 import os
 
+st.title('OCR text Detection')
 cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
 # upload = st.checkbox('Upload an Image')
 
@@ -32,13 +33,11 @@ def callAPI(image):
     }
 
     # Handle the API request
-    response = requests.post(vision_url+api_key, json=json_data)
+    responses = requests.post(vision_url+api_key, json=json_data)
 
     # Read the response in json format
-    response_data = response.json()
 
-    return response_data
-
+    return responses
 
 
 if cam =='Open Webcam':
@@ -56,7 +55,10 @@ else:
     if img is not None:
         encoded_image = base64.b64encode(img.read())
         result = callAPI(encoded_image)
+        info = result['responses'][0]['textAnnotations'][0]['description']
         st.write("Detected Text Results From uploaded Image")
+        st.write(info)
+        st.write("##API response Body")
         st.write(result)
         
 
