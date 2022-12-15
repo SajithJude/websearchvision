@@ -103,6 +103,8 @@ else:
         # st.write(gl)
 
         link = map(lambda pageinfo: pageinfo['url'], pageinfo)
+        for key in sorted(link.keys()):
+            st.image(str(link[key]))
         lnk = ' , '.join(link)
         st.write(lnk)
         openai.api_key =  os.getenv("OPENAI_API_KEY")
