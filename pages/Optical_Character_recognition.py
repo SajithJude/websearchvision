@@ -3,6 +3,9 @@ import base64
 import requests
 import json
 import os
+from PIL import Image
+from PIL import ImageFont
+from PIL import ImageDraw
 
 st.title('OCR text Detection')
 cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
@@ -53,6 +56,7 @@ if cam =='Open Webcam':
             #API response Body
             """)
             st.write(result) 
+            
 
         except: 
             st.write("An exception occurred")
