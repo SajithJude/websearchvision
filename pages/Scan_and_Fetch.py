@@ -98,7 +98,7 @@ else:
         st.write(resp.choices[0].text)
 
         st.table(pageinfo)
-        st.table(result)
+        st.table(result['responses'][0]['webDetection'])
 
         st.write(result)
         # st.write(resp)
