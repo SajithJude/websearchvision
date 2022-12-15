@@ -34,7 +34,7 @@ if img_file_buffer is not None:
                 },
                 'features':[
                     {
-                        'type':'WEB_DETECTION',
+                        'type':'FACE_DETECTION',
                         'maxResults':5
                     }
                 ]
