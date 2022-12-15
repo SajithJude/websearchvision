@@ -56,7 +56,7 @@ else:
         encoded_image = base64.b64encode(img.read())
         result = callAPI(encoded_image)
         try:
-            info = result['result'][0]['textAnnotations'][0]['description']
+            info = result['responses'][0]['textAnnotations'][0]['description']
             st.write("Detected Text Results From uploaded Image")
 
         except: 
