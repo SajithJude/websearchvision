@@ -4,8 +4,8 @@ import requests
 import json
 import os
 
-cam = st.checkbox('Open Web Camera')
-upload = st.checkbox('Upload an Image')
+cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
+# upload = st.checkbox('Upload an Image')
 
 def callAPI(image):
     vision_url = 'https://vision.googleapis.com/v1/images:annotate?key='
@@ -41,7 +41,7 @@ def callAPI(image):
 
 
 
-if cam:
+if cam =='Open Webcam':
     img_file_buffer = st.camera_input("Take a picture")
     if img_file_buffer is not None:
         encoded_image = base64.b64encode(img_file_buffer.read())
@@ -51,7 +51,7 @@ if cam:
         # The GCP Vision API URL 
         
 
-elif upload:
+else:
     img = st.file_uploader("Click to Upload an Image")
     encoded_image = base64.b64encode(img.read())
     result = callAPI(encoded_image)
