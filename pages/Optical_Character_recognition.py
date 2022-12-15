@@ -49,6 +49,10 @@ if cam =='Open Webcam':
             info = result['responses'][0]['textAnnotations'][0]['description']
             st.write("Detected Text Results From Web camera snapshot")
             st.write(info)
+            st.write("""
+            #API response Body
+            """)
+            st.write(result) 
 
         except: 
             st.write("An exception occurred")
