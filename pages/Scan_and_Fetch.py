@@ -80,7 +80,7 @@ else:
         resp = openai.Completion.create(
         model="text-davinci-002",
         prompt="Combine all the information from the given urls together and describe breifly " + pageinfo[0]['url'] + pageinfo[1]['url'] + pageinfo[2]['url'] + " .",
-        temperature=0.56,
+        temperature=0,
         max_tokens=3500,
         top_p=1,
         frequency_penalty=0.35,
