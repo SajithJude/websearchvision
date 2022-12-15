@@ -69,30 +69,30 @@ else:
     if img is not None:
         encoded_image = base64.b64encode(img.read())
         result = callAPI(encoded_image)
-        try:
+        # try:
             # info = result['responses'][0]['textAnnotations'][0]['description']
             # st.image(img)
-            st.text("#Detected Text Results From uploaded Image")
-            st.write(result)
-            pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
-            st.write(pageinfo)
-            openai.api_key =  os.getenv("OPENAI_API_KEY")
-            resp = openai.Completion.create(
-            model="text-davinci-002",
-            prompt="Explain the information in the given list of urls " + pageinfo,
-            temperature=0.56,
-            max_tokens=2066,
-            top_p=1,
-            frequency_penalty=0.35,
-            presence_penalty=0,
-            # stop=["\n"]
-            )
-            # st.write(resp.choices[0].text)
-            st.write(resp)
+        st.text("#Detected Text Results From uploaded Image")
+        st.write(result)
+        pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
+        st.write(pageinfo)
+        openai.api_key =  os.getenv("OPENAI_API_KEY")
+        resp = openai.Completion.create(
+        model="text-davinci-002",
+        prompt="Explain the information in the given list of urls " + pageinfo,
+        temperature=0.56,
+        max_tokens=3500,
+        top_p=1,
+        frequency_penalty=0.35,
+        presence_penalty=0,
+        # stop=["\n"]
+        )
+        # st.write(resp.choices[0].text)
+        st.write(resp)
 
-        except: 
-            st.write("An exception occurred")
-            st.text("##API response Body")
-            st.write(result)
+        # except: 
+        #     st.write("An exception occurred")
+        #     st.text("##API response Body")
+        #     st.write(result)
         
 
