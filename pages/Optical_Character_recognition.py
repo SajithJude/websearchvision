@@ -50,13 +50,14 @@ if cam =='Open Webcam':
         result = callAPI(encoded_image)
         try:
             info = result['responses'][0]['textAnnotations'][0]['description']
+            st.image(img_file_buffer)
             st.write("Detected Text Results From Web camera snapshot")
             st.write(info)
             st.write("""
             #API response Body
             """)
             st.write(result) 
-            
+
 
         except: 
             st.write("An exception occurred")
