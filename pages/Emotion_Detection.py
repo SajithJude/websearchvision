@@ -47,7 +47,7 @@ if img_file_buffer is not None:
 
     # Read the response in json format
     response_data = response.json()
-    annotation = response_data['response_data'][0]['faceAnnotations'][0]
+    annotation = response_data['responses'][0]['faceAnnotations'][0]
     # Printing the response, in this case it will return all the labels that are 
     # identified in the image
     st.write("Suprised :")
