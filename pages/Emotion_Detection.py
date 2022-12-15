@@ -70,7 +70,7 @@ if img_file_buffer is not None:
         st.header("In Sorrow")
         st.write(annotation['sorrowLikelihood'])  
 
-    with col3:
+    with col4:
         st.header("In Anger")
         st.write(annotation['angerLikelihood'])   
         # st.image("https://static.streamlit.io/examples/owl.jpg")
