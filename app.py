@@ -1,7 +1,7 @@
 import streamlit as st
 from googleapiclient.discovery import build
 import os
-import pandas as 
+import pandas as pd
 
 
 
@@ -10,9 +10,9 @@ import pandas as
 
 
 # Importing necessary Standard Libraries
-# import base64
-# import requests
-# import json
+import base64
+import requests
+import json
 
 # # The GCP Vision API URL 
 # vision_url = 'https://vision.googleapis.com/v1/images:annotate?key='
