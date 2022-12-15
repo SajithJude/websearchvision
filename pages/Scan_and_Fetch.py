@@ -85,6 +85,12 @@ else:
         ent =  ' '.join(entities)
         st.write(entities)
 
+
+        guesslabels =result['responses'][0]['webDetection']['bestGuessLabels']
+        guesslab = [guesslabels['description'] for guesslabels in guesslabels if 'description' in guesslabels]
+        gl =  ' '.join(guesslab)
+        st.write(gl)
+
         link = map(lambda pageinfo: pageinfo['url'], pageinfo)
         lnk = ' '.join(link)
 
