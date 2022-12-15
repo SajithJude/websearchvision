@@ -81,9 +81,9 @@ else:
         # for url in pageinfo.items():
         #     lsr.append(url)
         webent =result['responses'][0]['webDetection']['webEntities']
-        # entities =  map(lambda webent: webent['description'], webent)
+        entities = [pageinfo['value'] for pageinfo in l if 'value' in pageinfo]
         # ent =  ' '.join(entities)
-        st.write(webent)
+        st.write(entities)
 
         link = map(lambda pageinfo: pageinfo['url'], pageinfo)
         lnk = ' '.join(link)
