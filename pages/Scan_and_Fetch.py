@@ -97,7 +97,7 @@ else:
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-002",
-        prompt="Combine all the information from the given urls together and describe comprehensivley " + lnk + ", use these words while combing the information. "+ ent + " .",
+        prompt="Combine all the information from the given urls together and describe comprehensivley " + lnk + " "+ gl + " , use these words while combing the information. "+ ent + " .",
         temperature=0.2,
         max_tokens=3500,
         top_p=1,
