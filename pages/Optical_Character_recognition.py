@@ -53,9 +53,10 @@ if cam =='Open Webcam':
 
 else:
     img = st.file_uploader("Click to Upload an Image")
-    encoded_image = base64.b64encode(img.read())
-    result = callAPI(encoded_image)
-    st.write("Detected Text Results From uploaded Image")
-    st.write(result)
-    
+    if img is not None:
+        encoded_image = base64.b64encode(img.read())
+        result = callAPI(encoded_image)
+        st.write("Detected Text Results From uploaded Image")
+        st.write(result)
+        
 
