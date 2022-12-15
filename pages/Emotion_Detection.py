@@ -47,8 +47,13 @@ if img_file_buffer is not None:
 
     # Read the response in json format
     response_data = response.json()
-
+    annotation = response_data['response_data'][0]['faceAnnotations'][0]
     # Printing the response, in this case it will return all the labels that are 
     # identified in the image
-    st.write("GCP Vision Annotation :")
-    st.write(json.dumps(response_data, indent=4))
+    st.write("Suprised :")
+    st.write(annotation['surpriseLikelihood'])
+    st.write("Joy :")
+    st.write(annotation['joyLikelihood'])    
+    st.write("Sorrow :")
+    st.write(annotation['sorrowLikelihood'])        
+    # st.write(json.dumps(response_data, indent=4))
