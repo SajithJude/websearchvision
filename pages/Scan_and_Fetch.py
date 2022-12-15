@@ -75,15 +75,19 @@ else:
         # st.text("#Detected Text Results From uploaded Image")
         # st.write(result)
         pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
-        lsr = []
-        for url in pageinfo.items():
-            lsr.append(url)
+        # lsr = []
+        # # [pageinfo['value'] for pageinfo in l if 'value' in pageinfo]
+        
+        # for url in pageinfo.items():
+        #     lsr.append(url)
 
-        link = ' '.join(lsr)
+        link = map(lambda pageinfo: pageinfo['url'], l)
+        lnk = ' '.join(link)
+
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-002",
-        prompt="Combine all the information from the given urls together and describe breifly " + link + " .",
+        prompt="Combine all the information from the given urls together and describe breifly " + lnk + " .",
         temperature=0.2,
         max_tokens=3500,
         top_p=1,
