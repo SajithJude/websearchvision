@@ -51,7 +51,7 @@ if img_file_buffer is not None:
     # Printing the response, in this case it will return all the labels that are 
     # identified in the image
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3 , col4= st.columns(4)
 
     with col1:
         st.header("Suprised")
@@ -68,8 +68,11 @@ if img_file_buffer is not None:
 
     with col3:
         st.header("In Sorrow")
-        st.write(annotation['sorrowLikelihood'])        
+        st.write(annotation['sorrowLikelihood'])  
 
+    with col3:
+        st.header("In Anger")
+        st.write(annotation['angerLikelihood'])   
         # st.image("https://static.streamlit.io/examples/owl.jpg")
     # st.write("Suprised :")
     # st.write("Joy :")
