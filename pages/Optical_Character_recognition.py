@@ -58,6 +58,7 @@ else:
         try:
             info = result['responses'][0]['textAnnotations'][0]['description']
             st.write("Detected Text Results From uploaded Image")
+            st.write(info)
 
         except: 
             st.write("An exception occurred")
