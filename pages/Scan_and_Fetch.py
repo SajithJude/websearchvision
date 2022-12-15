@@ -80,14 +80,16 @@ else:
         
         # for url in pageinfo.items():
         #     lsr.append(url)
-
+        webent =result['responses'][0]['webDetection']['webEntities']
+        entities =  map(lambda webent: webent['description'], webent)
+        ent =  ' '.join(entities)
         link = map(lambda pageinfo: pageinfo['url'], pageinfo)
         lnk = ' '.join(link)
 
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-002",
-        prompt="Combine all the information from the given urls together and describe comprehensivley " + lnk + " .",
+        prompt="Combine all the information from the given urls together and describe comprehensivley " + lnk + ", include these keywords to connect each information " + ent +" .",
         temperature=0.2,
         max_tokens=3500,
         top_p=1,
