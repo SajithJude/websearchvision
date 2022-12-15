@@ -45,14 +45,14 @@ def draw_bbox(image):
 
     # extract bounding box points
     x, y, width, height = [], [], [], []
-    if 'fullTextAnnotation' in response['responses'][0]:
-        for i in response['responses'][0]['textAnnotations'][1:]:
-            vertices = i['boundingPoly']['vertices']
-            x.append(vertices[0]['x'])
-            y.append(vertices[0]['y'])
-            width.append(vertices[3]['x'] - vertices[0]['x'])
-            height.append(vertices[3]['y'] - vertices[0]['y'])
-        
+    # if 'fullTextAnnotation' in response['responses'][0]:
+    for i in response['responses'][0]['textAnnotations'][1:]:
+        vertices = i['boundingPoly']['vertices']
+        x.append(vertices[0]['x'])
+        y.append(vertices[0]['y'])
+        width.append(vertices[3]['x'] - vertices[0]['x'])
+        height.append(vertices[3]['y'] - vertices[0]['y'])
+    
     # draw Bounding box
     fig, ax = plt.subplots(figsize=(10,10))
     ax.imshow(plt.imread(image))
