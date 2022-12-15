@@ -82,7 +82,7 @@ else:
         #     lsr.append(url)
         webent =result['responses'][0]['webDetection']['webEntities']
         entities = [webent['description'] for webent in webent if 'description' in webent]
-        ent =  ' '.join(entities)
+        ent =  ' , '.join(entities)
         st.write(entities)
 
 
@@ -102,7 +102,7 @@ else:
 
         with col2:
             st.header("Detected Entities")
-            st.write(entities)
+            st.write(ent)
             # st.write(annotation['joyLikelihood']) 
         # st.write(gl)
 
