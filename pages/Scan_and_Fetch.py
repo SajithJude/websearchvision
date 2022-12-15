@@ -75,6 +75,8 @@ else:
             # st.image(img)
             st.text("#Detected Text Results From uploaded Image")
             st.write(result)
+            pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
+            st.write(pageinfo)
 
         except: 
             st.write("An exception occurred")
