@@ -81,7 +81,7 @@ else:
         # for url in pageinfo.items():
         #     lsr.append(url)
 
-        link = map(lambda pageinfo: pageinfo['url'], l)
+        link = map(lambda pageinfo: pageinfo['url'], pageinfo)
         lnk = ' '.join(link)
 
         openai.api_key =  os.getenv("OPENAI_API_KEY")
