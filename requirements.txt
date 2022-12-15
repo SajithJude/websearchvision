@@ -1,4 +1,2 @@
 streamlit
-google-api-python-client
-pillow
-matplotlib
+openai
