@@ -72,15 +72,15 @@ else:
         # try:
             # info = result['responses'][0]['textAnnotations'][0]['description']
             # st.image(img)
-        st.text("#Detected Text Results From uploaded Image")
-        st.write(result)
+        # st.text("#Detected Text Results From uploaded Image")
+        # st.write(result)
         pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
-        st.write(pageinfo)
+       
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-002",
         prompt="Combine all the information from the given urls together and describe breifly " + pageinfo[0]['url'] + pageinfo[1]['url'] + pageinfo[2]['url'] + " .",
-        temperature=0,
+        temperature=0.2,
         max_tokens=3500,
         top_p=1,
         frequency_penalty=0.35,
@@ -88,6 +88,8 @@ else:
         # stop=["\n"]
         )
         st.write(resp.choices[0].text)
+
+        st.table(pageinfo)
         # st.write(resp)
 
         # except: 
