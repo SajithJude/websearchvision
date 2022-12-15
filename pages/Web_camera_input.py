@@ -2,6 +2,7 @@ import streamlit as st
 import base64
 import requests
 import json
+import os
 
 img_file_buffer = st.camera_input("Take a picture")
 
