@@ -105,7 +105,7 @@ else:
         link = map(lambda pageinfo: pageinfo['url'], pageinfo)
         for i in list(link):
             st.write(i)
-            st.image(str(i))
+            st.image(str(i),width=100)
         # # for key in link.keys()):
         #     st.image(str(link[key]))
         lnk = ' , '.join(link)
