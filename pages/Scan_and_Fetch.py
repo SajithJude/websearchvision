@@ -89,7 +89,19 @@ else:
         guesslabels =result['responses'][0]['webDetection']['bestGuessLabels']
         guesslab = [guesslabels['label'] for guesslabels in guesslabels if 'label' in guesslabels]
         gl =  ' '.join(guesslab)
-        st.write(gl)
+
+        col1 ,col2 = st.columns(2)
+
+        with col1:
+            st.header("Image annotation :")
+            # st.write(annotation['surpriseLikelihood'])
+
+            # st.image("https://static.streamlit.io/examples/cat.jpg")
+
+        with col2:
+            st.header(gl)
+            # st.write(annotation['joyLikelihood']) 
+        # st.write(gl)
 
         link = map(lambda pageinfo: pageinfo['url'], pageinfo)
         lnk = ' '.join(link)
@@ -97,7 +109,7 @@ else:
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-002",
-        prompt="Combine all the information from the given urls together and describe comprehensivley " + lnk + " "+ gl + " , use these words while combing the information. "+ ent + " .",
+        prompt="Combine all the information from the given urls together and describe comprehensivley " + lnk +  " , use these words while combing the information. "+ ent + " .",
         temperature=0.2,
         max_tokens=3500,
         top_p=1,
