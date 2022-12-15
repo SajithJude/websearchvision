@@ -72,6 +72,7 @@ else:
         result = callAPI(encoded_image)
         try:
             info = result['responses'][0]['textAnnotations'][0]['description']
+            st.image(img)
             st.write("Detected Text Results From uploaded Image")
             st.write(info)
 
