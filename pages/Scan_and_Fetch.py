@@ -87,7 +87,7 @@ else:
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-002",
-        prompt="Combine all the information from the given urls together and describe breifly " + lnk + " .",
+        prompt="Combine all the information from the given urls together and describe breifly " + lnk + ",highlight on how the information on each links might be corelated .",
         temperature=0.2,
         max_tokens=3500,
         top_p=1,
