@@ -50,10 +50,28 @@ if img_file_buffer is not None:
     annotation = response_data['responses'][0]['faceAnnotations'][0]
     # Printing the response, in this case it will return all the labels that are 
     # identified in the image
-    st.write("Suprised :")
-    st.write(annotation['surpriseLikelihood'])
-    st.write("Joy :")
-    st.write(annotation['joyLikelihood'])    
-    st.write("Sorrow :")
-    st.write(annotation['sorrowLikelihood'])        
-    # st.write(json.dumps(response_data, indent=4))
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.header("Suprised")
+        st.write(annotation['surpriseLikelihood'])
+
+        # st.image("https://static.streamlit.io/examples/cat.jpg")
+
+    with col2:
+        st.header("In Joy")
+        st.write(annotation['joyLikelihood'])    
+
+
+        # st.image("https://static.streamlit.io/examples/dog.jpg")
+
+    with col3:
+        st.header("In Sorrow")
+        st.write(annotation['sorrowLikelihood'])        
+
+        # st.image("https://static.streamlit.io/examples/owl.jpg")
+    # st.write("Suprised :")
+    # st.write("Joy :")
+    # st.write("Sorrow :")
+    # # st.write(json.dumps(response_data, indent=4))
