@@ -104,7 +104,7 @@ else:
 
         link = map(lambda pageinfo: pageinfo['url'], pageinfo)
         lnk = ' '.join(link)
-        st.write(link[0])
+        st.write(lnk)
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-002",
