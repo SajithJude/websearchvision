@@ -103,7 +103,7 @@ else:
         # st.write(gl)
 
         link = map(lambda pageinfo: pageinfo['url'], pageinfo)
-        for key in sorted(link.keys()):
+        for key in link.keys():
             st.image(str(link[key]))
         lnk = ' , '.join(link)
         st.write(lnk)
