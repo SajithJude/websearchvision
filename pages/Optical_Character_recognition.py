@@ -45,9 +45,15 @@ if cam =='Open Webcam':
     if img_file_buffer is not None:
         encoded_image = base64.b64encode(img_file_buffer.read())
         result = callAPI(encoded_image)
-        st.write("Detected Text Results from Web Camera")
-        st.write(result)
-        # The GCP Vision API URL 
+        try:
+            info = result['responses'][0]['textAnnotations'][0]['description']
+            st.write("Detected Text Results From Web camera snapshot")
+            st.write(info)
+
+        except: 
+            st.write("An exception occurred")
+            st.write("##API response Body")
+            st.write(result) 
         
 
 else:
