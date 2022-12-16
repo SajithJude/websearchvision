@@ -97,7 +97,7 @@ else:
             openai.api_key =  os.getenv("OPENAI_API_KEY")
             resp = openai.Completion.create(
             model="text-davinci-002",
-            prompt="Fetch information about this medicine, and use its cases, include names of the other drugs that cross interacts as well  : " + info ,
+            prompt="Fetch information about this medicine, and use its uses, include names drugs that cross interacts with this  : " + info ,
             temperature=0.2,
             max_tokens=3500,
             top_p=1,
