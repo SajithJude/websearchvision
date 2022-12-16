@@ -97,7 +97,7 @@ else:
             openai.api_key =  os.getenv("OPENAI_API_KEY")
             resp = openai.Completion.create(
             model="text-davinci-002",
-            prompt="Find some information about  this drug  " + info + " also state the name of the other drugs that has interactions with this  .",
+            prompt="Find some information about this medicine  " + info + " while also state the name of the other drugs that has interactions with this  .",
             temperature=0.2,
             max_tokens=3500,
             top_p=1,
@@ -107,7 +107,7 @@ else:
             )
             st.write(resp.choices[0].text)
 
-            st.table(pageinfo)
+            # st.table(pageinfo)
             st.table(result['responses'][0])
 
             st.write(result)
