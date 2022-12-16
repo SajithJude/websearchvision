@@ -93,7 +93,7 @@ else:
                 # st.header("Detected Entities")
                 # st.write(ent)
                 st.text(info)
-            st.write(info)
+            st.caption(info)
             openai.api_key =  os.getenv("OPENAI_API_KEY")
             resp = openai.Completion.create(
             model="text-davinci-002",
@@ -110,7 +110,7 @@ else:
 
         except: 
             st.write("An exception occurred")
-            st.text("##API response Body")
+            # st.text("##API response Body")
             st.write(result)
         
 
