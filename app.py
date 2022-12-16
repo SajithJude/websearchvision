@@ -13,7 +13,7 @@ st.subheader(
 
 st.subheader(
     """
-    **Available Demos**: Scan and Fetch,\n OCR Text Detection,\n Drug Scanner, \n Emotion Detector .
+    **Available Demos**:,\n Scan and Fetch\n, \nOCR Text Detection,\nDrug Scanner\n, \n Emotion Detector .
         all the above demos will request webcamera permissions to process video or you can upload an image and run the inference as well !
     """
 )
