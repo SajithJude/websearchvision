@@ -2,7 +2,7 @@ import streamlit as st
 import base64
 import requests
 import json
-import os
+# import os
 import openai
 import os
 
