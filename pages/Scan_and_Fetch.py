@@ -55,15 +55,24 @@ if cam =='Open Webcam':
                 st.image(i,width=100)
         except:
             st.write("No Page Info Found for this image")
+            # global lnk
+            
+        try:
+            webent =result['responses'][0]['webDetection']['webEntities']
+            entities = [webent['description'] for webent in webent if 'description' in webent]
+            ent =  ' , '.join(entities)    
             lnk = ent
+        except:
+            st.write("No Page Entities  Found for this image")
+            # global e
+
+
         # lsr = []
         # # [pageinfo['value'] for pageinfo in l if 'value' in pageinfo]
         
         # for url in pageinfo.items():
         #     lsr.append(url)
-        webent =result['responses'][0]['webDetection']['webEntities']
-        entities = [webent['description'] for webent in webent if 'description' in webent]
-        ent =  ' , '.join(entities)
+       
         # st.write(entities)
 
 
