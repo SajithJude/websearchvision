@@ -83,7 +83,7 @@ else:
         webent =result['responses'][0]['webDetection']['webEntities']
         entities = [webent['description'] for webent in webent if 'description' in webent]
         ent =  ' , '.join(entities)
-        st.write(entities)
+        # st.write(entities)
 
 
         guesslabels =result['responses'][0]['webDetection']['bestGuessLabels']
