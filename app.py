@@ -6,7 +6,7 @@ st.title("Ïnstancy Demo Gallery")
 
 st.subheader(
         """
-        **Read Me**: 👆 Click on the arrow icon on the right to toggle the navigationa bar and access the demo use cases
+        **Read Me**: 👆 Click on the arrow icon on the left to toggle the navigationa bar and select the individual demo to run them
 
         """
     )
