@@ -47,7 +47,10 @@ if cam =='Open Webcam':
     if img_file_buffer is not None:
         encoded_image = base64.b64encode(img_file_buffer.read())
         result = callAPI(encoded_image)
-        pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
+        try:
+            pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
+        except:
+            st.write("No Page Info Found for this image")
         # lsr = []
         # # [pageinfo['value'] for pageinfo in l if 'value' in pageinfo]
         
