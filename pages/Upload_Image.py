@@ -65,14 +65,9 @@ if cam =='Open Webcam':
             )
             st.write(resp.choices[0].text)
 
-            # st.table(pageinfo)
-            # st.table(result['responses'][0])
-
-            # st.write(result)
-
         except: 
             st.write("An exception occurred")
-            st.text("##API response Body")
+            # st.text("##API response Body")
             st.write(result)
         
 
