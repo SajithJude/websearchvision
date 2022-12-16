@@ -49,6 +49,10 @@ if cam =='Open Webcam':
         result = callAPI(encoded_image)
         try:
             pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
+            link = map(lambda pageinfo: pageinfo['url'], pageinfo)
+            for i in list(link):
+                st.write(i)
+                st.image(i,width=100)
         except:
             st.write("No Page Info Found for this image")
         # lsr = []
