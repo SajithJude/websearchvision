@@ -65,10 +65,10 @@ if cam =='Open Webcam':
             )
             st.write(resp.choices[0].text)
 
-            st.table(pageinfo)
-            st.table(result['responses'][0])
+            # st.table(pageinfo)
+            # st.table(result['responses'][0])
 
-            st.write(result)
+            # st.write(result)
 
         except: 
             st.write("An exception occurred")
@@ -84,7 +84,15 @@ else:
         try:
             info = result['responses'][0]['textAnnotations'][0]['description']
             st.image(img)
-            st.text("#Detected Text Results From uploaded Image")
+            col1,col2  = st.columns(2)
+            with col1:
+                st.header("Detected Text")
+                # st.write(gl)
+
+            with col2:
+                # st.header("Detected Entities")
+                # st.write(ent)
+                st.text(info)
             st.write(info)
             openai.api_key =  os.getenv("OPENAI_API_KEY")
             resp = openai.Completion.create(
