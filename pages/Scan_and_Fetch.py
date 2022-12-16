@@ -51,10 +51,11 @@ if cam =='Open Webcam':
             pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
             link = map(lambda pageinfo: pageinfo['url'], pageinfo)
             for i in list(link):
-                st.write(i)
+                # st.write(i)
                 st.image(i,width=100)
         except:
             st.write("No Page Info Found for this image")
+            lnk = ent
         # lsr = []
         # # [pageinfo['value'] for pageinfo in l if 'value' in pageinfo]
         
@@ -82,18 +83,18 @@ if cam =='Open Webcam':
             # st.write(annotation['joyLikelihood']) 
         # st.write(gl)
 
-        link = map(lambda pageinfo: pageinfo['url'], pageinfo)
-        for i in list(link):
-            st.write(i)
-            st.image(i,width=100)
+        # link = map(lambda pageinfo: pageinfo['url'], pageinfo)
+        # for i in list(link):
+        #     st.write(i)
+        #     st.image(i,width=100)
         # # for key in link.keys()):
         #     st.image(str(link[key]))
-        lnk = ' '.join(link)
-        st.write(lnk)
+        # lnk = ' '.join(link)
+        # st.write(lnk)
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-002",
-        prompt="Combine all the information from the given urls together and describe comprehensivley " + lnk + " .",
+        prompt="Combine all the information from the given urls together and describe comprehensivley " + lnk + ".",
         temperature=0.2,
         max_tokens=3500,
         top_p=1,
