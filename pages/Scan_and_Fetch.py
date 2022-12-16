@@ -47,21 +47,65 @@ if cam =='Open Webcam':
     if img_file_buffer is not None:
         encoded_image = base64.b64encode(img_file_buffer.read())
         result = callAPI(encoded_image)
-        try:
-            # info = result['responses'][0]['textAnnotations'][0]['description']
-            # st.image(img_file_buffer)
-            # st.write("Detected Text Results From Web camera snapshot")
-            # st.write(info)
-            st.write("""
-            #API response Body
-            """)
-            st.write(result) 
+        pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
+        # lsr = []
+        # # [pageinfo['value'] for pageinfo in l if 'value' in pageinfo]
+        
+        # for url in pageinfo.items():
+        #     lsr.append(url)
+        webent =result['responses'][0]['webDetection']['webEntities']
+        entities = [webent['description'] for webent in webent if 'description' in webent]
+        ent =  ' , '.join(entities)
+        # st.write(entities)
 
 
-        except: 
-            st.write("An exception occurred")
-            st.write("##API response Body")
-            st.write(result) 
+        guesslabels =result['responses'][0]['webDetection']['bestGuessLabels']
+        guesslab = [guesslabels['label'] for guesslabels in guesslabels if 'label' in guesslabels]
+        gl =  ' '.join(guesslab)
+
+        col1 ,col2 = st.columns(2)
+
+        with col1:
+            st.header("Image annotation")
+            st.write(gl)
+
+        with col2:
+            st.header("Detected Entities")
+            st.write(ent)
+            # st.write(annotation['joyLikelihood']) 
+        # st.write(gl)
+
+        link = map(lambda pageinfo: pageinfo['url'], pageinfo)
+        for i in list(link):
+            st.write(i)
+            st.image(i,width=100)
+        # # for key in link.keys()):
+        #     st.image(str(link[key]))
+        lnk = ' '.join(link)
+        st.write(lnk)
+        openai.api_key =  os.getenv("OPENAI_API_KEY")
+        resp = openai.Completion.create(
+        model="text-davinci-002",
+        prompt="Combine all the information from the given urls together and describe comprehensivley " + lnk + " .",
+        temperature=0.2,
+        max_tokens=3500,
+        top_p=1,
+        frequency_penalty=0.35,
+        presence_penalty=0,
+        # stop=["\n"]
+        )
+        st.write(resp.choices[0].text)
+
+        st.table(pageinfo)
+        st.table(result['responses'][0])
+
+        st.write(result) 
+
+
+        # except: 
+        #     st.write("An exception occurred")
+        #     st.write("##API response Body")
+        #     st.write(result) 
         
 
 else:
