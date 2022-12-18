@@ -88,9 +88,9 @@ if img is not None:
         with col2:
             # st.header("Detected Entities")
             # st.write(ent)
-            st.text(info)
+            st.subheader(info)
         st.caption(info)
-        st.text("Coordinates :"+ str(coor))
+        st.caption("Coordinates :"+ str(coor))
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-003",
