@@ -73,7 +73,7 @@ if cam =='Open Webcam':
             presence_penalty=0,
             # stop=["\n"]
             )
-            st.write(resp.choices[0].text)
+            # st.write(resp.choices[0].text)
 
         except: 
             st.write("An exception occurred")
