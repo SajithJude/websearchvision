@@ -78,10 +78,11 @@ else:
         result = callAPI(encoded_image)
         try:
             info = result['responses'][0]['landmarkAnnotations'][0]['description']
+            coor = result['responses'][0]['landmarkAnnotations'][0]['locations']
             st.image(img)
             col1,col2  = st.columns(2)
             with col1:
-                st.header("Detected Text")
+                st.header("Detected Text  :")
                 # st.write(gl)
 
             with col2:
@@ -89,6 +90,7 @@ else:
                 # st.write(ent)
                 st.text(info)
             st.caption(info)
+            st.text("Coordinates :"+ coor)
             openai.api_key =  os.getenv("OPENAI_API_KEY")
             resp = openai.Completion.create(
             model="text-davinci-002",
