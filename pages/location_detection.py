@@ -42,72 +42,72 @@ def callAPI(image):
     return responses.json()
 
 
-if cam =='Open Webcam':
-    img_file_buffer = st.camera_input("Take a picture")
-    if img_file_buffer is not None:
-        encoded_image = base64.b64encode(img_file_buffer.read())
-        result = callAPI(encoded_image)
-        try:
-            info = result['responses'][0]['landmarkAnnotations'][0]['description']
-            # st.image(img)
-            st.text("#Detected Text Results From uploaded Image")
-            st.write(info)
-            openai.api_key =  os.getenv("OPENAI_API_KEY")
-            resp = openai.Completion.create(
-            model="text-davinci-002",
-            prompt="Find some information about this location : " + info + "  .",
-            temperature=0.2,
-            max_tokens=3500,
-            top_p=1,
-            frequency_penalty=0.35,
-            presence_penalty=0,
-            # stop=["\n"]
-            )
-            st.write(resp.choices[0].text)
+# if cam =='Open Webcam':
+#     img_file_buffer = st.camera_input("Take a picture")
+#     if img_file_buffer is not None:
+#         encoded_image = base64.b64encode(img_file_buffer.read())
+#         result = callAPI(encoded_image)
+#         try:
+#             info = result['responses'][0]['landmarkAnnotations'][0]['description']
+#             # st.image(img)
+#             st.text("#Detected Text Results From uploaded Image")
+#             st.write(info)
+#             openai.api_key =  os.getenv("OPENAI_API_KEY")
+#             resp = openai.Completion.create(
+#             model="text-davinci-002",
+#             prompt="Find some information about this location : " + info + "  .",
+#             temperature=0.2,
+#             max_tokens=3500,
+#             top_p=1,
+#             frequency_penalty=0.35,
+#             presence_penalty=0,
+#             # stop=["\n"]
+#             )
+#             st.write(resp.choices[0].text)
 
-        except: 
-            st.write("An exception occurred")
-            # st.text("##API response Body")
-            st.write(result)
+#         except: 
+#             st.write("An exception occurred")
+#             # st.text("##API response Body")
+#             st.write(result)
         
 
-else:
-    img = st.file_uploader("Click to Upload an Image")
-    if img is not None:
-        encoded_image = base64.b64encode(img.read())
-        result = callAPI(encoded_image)
-        try:
-            info = result['responses'][0]['landmarkAnnotations'][0]['description']
-            coor = result['responses'][0]['landmarkAnnotations'][0]['locations'][0]['latLng']
-            st.image(img)
-            col1,col2  = st.columns(2)
-            with col1:
-                st.header("Detected Text  :")
-                # st.write(gl)
+# else:
+img = st.file_uploader("Click to Upload an Image")
+if img is not None:
+    encoded_image = base64.b64encode(img.read())
+    result = callAPI(encoded_image)
+    try:
+        info = result['responses'][0]['landmarkAnnotations'][0]['description']
+        coor = result['responses'][0]['landmarkAnnotations'][0]['locations'][0]['latLng']
+        st.image(img)
+        col1,col2  = st.columns(2)
+        with col1:
+            st.header("Detected Text  :")
+            # st.write(gl)
 
-            with col2:
-                # st.header("Detected Entities")
-                # st.write(ent)
-                st.text(info)
-            st.caption(info)
-            st.text("Coordinates :"+ str(coor))
-            openai.api_key =  os.getenv("OPENAI_API_KEY")
-            resp = openai.Completion.create(
-            model="text-davinci-003",
-            prompt="Find some information about this location : " + info + "  .",
-            temperature=0.2,
-            max_tokens=3500,
-            top_p=1,
-            frequency_penalty=0.35,
-            presence_penalty=0,
-            # stop=["\n"]
-            )
-            st.write(resp.choices[0].text)
+        with col2:
+            # st.header("Detected Entities")
+            # st.write(ent)
+            st.text(info)
+        st.caption(info)
+        st.text("Coordinates :"+ str(coor))
+        openai.api_key =  os.getenv("OPENAI_API_KEY")
+        resp = openai.Completion.create(
+        model="text-davinci-003",
+        prompt="Find some information about this location : " + info + "  .",
+        temperature=0.2,
+        max_tokens=3500,
+        top_p=1,
+        frequency_penalty=0.35,
+        presence_penalty=0,
+        # stop=["\n"]
+        )
+        st.write(resp.choices[0].text)
 
 
-        except: 
-            st.write("An exception occurred")
-            # st.text("##API response Body")
-            st.write(result)
+    except: 
+        st.write("An exception occurred")
+        # st.text("##API response Body")
+        st.write(result)
         
 
