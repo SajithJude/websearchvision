@@ -98,7 +98,6 @@ if img is not None:
         lat = coor['latitude']
         lon = coor['longitude']
         df = pd.DataFrame([{lat,lon}],columns=['lat','lon'])
-        st.map(df)
         st.image(img)
         col1,col2  = st.columns(2)
         with col1:
@@ -123,6 +122,9 @@ if img is not None:
         # stop=["\n"]
         )
         st.write(resp.choices[0].text)
+        st.subheader("Explore loaction in Maps")
+        st.map(df,use_container_width=True)
+
 
 
     except: 
