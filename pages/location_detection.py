@@ -6,7 +6,7 @@ import os
 import openai
 # import os
 
-st.title('Drug information and cross interaction Detection')
+st.title('Famous Location/Landmarks Detection based on Image')
 cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
 # upload = st.checkbox('Upload an Image')
 
