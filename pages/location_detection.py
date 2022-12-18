@@ -3,6 +3,7 @@ import base64
 import requests
 import gmaps
 import os
+from ipywidgets import embed
 import streamlit.components.v1 as components
 
 import openai
