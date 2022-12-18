@@ -7,7 +7,7 @@ import openai
 # import os
 gmapapi= os.environ["API_KEY"] 
 gmaps.configure(api_key=gmapapi)
-nyc = (940.75,-74.00)
+nyc = (94.75,-74.00)
 gmaps.figure(center=nyc,zoom_level=12)
 
 
