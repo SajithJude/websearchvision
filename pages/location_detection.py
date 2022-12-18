@@ -3,12 +3,17 @@ import base64
 import requests
 import gmaps
 import os
+import streamlit.components.v1 as components
+
 import openai
 # import os
 gmapapi= os.environ["API_KEY"] 
 gmaps.configure(api_key=gmapapi)
 nyc = (40.75,-74.00)
-gmaps.figure(center=nyc,zoom_level=12)
+_map = gmaps.figure(center=nyc,zoom_level=12)
+snippet = embed.embed_snippet(views=_map)
+html = embed.html_template.format(title="", snippet=snippet)
+components.html(html, height=500,width=500)
 
 
 st.title('Famous Location/Landmarks Detection based on Image')
