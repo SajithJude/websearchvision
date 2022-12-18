@@ -78,7 +78,7 @@ else:
         result = callAPI(encoded_image)
         try:
             info = result['responses'][0]['landmarkAnnotations'][0]['description']
-            coor = result['responses'][0]['landmarkAnnotations'][0]['locations']
+            coor = result['responses'][0]['landmarkAnnotations']['locations'][0]['latLng']
             st.image(img)
             col1,col2  = st.columns(2)
             with col1:
