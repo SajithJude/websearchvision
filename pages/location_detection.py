@@ -49,7 +49,7 @@ if cam =='Open Webcam':
         result = callAPI(encoded_image)
         try:
             info = result['responses'][0]['landmarkAnnotations'][0]['description']
-            st.image(img)
+            # st.image(img)
             st.text("#Detected Text Results From uploaded Image")
             st.write(info)
             openai.api_key =  os.getenv("OPENAI_API_KEY")
@@ -93,7 +93,7 @@ else:
             st.text("Coordinates :"+ str(coor))
             openai.api_key =  os.getenv("OPENAI_API_KEY")
             resp = openai.Completion.create(
-            model="text-davinci-002",
+            model="text-davinci-003",
             prompt="Find some information about this location : " + info + "  .",
             temperature=0.2,
             max_tokens=3500,
