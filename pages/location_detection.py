@@ -7,7 +7,7 @@ import openai
 # import os
 
 st.title('Famous Location/Landmarks Detection based on Image')
-cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
+# cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
 # upload = st.checkbox('Upload an Image')
 
 def callAPI(image):
