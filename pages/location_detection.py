@@ -4,13 +4,17 @@ import requests
 import gmaps
 import os
 from ipywidgets import embed
+import pandas as pd
 import streamlit.components.v1 as components
 
 import openai
+
 # import os
 gmapapi= os.environ["API_KEY"] 
 gmaps.configure(api_key=gmapapi)
 nyc = (40.75,-74.00)
+df = pd.DataFrame([40.75,-74.00],columns=['lat','lon'])
+st.map(df)
 _map = gmaps.figure(center=nyc,zoom_level=12)
 st.write(_map)
 # st.map(_map)
