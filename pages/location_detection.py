@@ -1,10 +1,15 @@
 import streamlit as st
 import base64
 import requests
-import json
+import gmaps
 import os
 import openai
 # import os
+gmapapi= os.environ["API_KEY"] 
+gmaps.configue(api_key=gmapapi)
+nyc = (940.75,-74.00)
+gmaps.figure(center=nyc,zoom_level=12)
+
 
 st.title('Famous Location/Landmarks Detection based on Image')
 # cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
