@@ -12,10 +12,11 @@ gmapapi= os.environ["API_KEY"]
 gmaps.configure(api_key=gmapapi)
 nyc = (40.75,-74.00)
 _map = gmaps.figure(center=nyc,zoom_level=12)
-st.map(_map)
-snippet = embed.embed_snippet(views=_map)
-html = embed.html_template.format(title="", snippet=snippet)
-components.html(html, height=500,width=500)
+st.write(_map)
+# st.map(_map)
+# snippet = embed.embed_snippet(views=_map)
+# html = embed.html_template.format(title="", snippet=snippet)
+# components.html(html, height=500,width=500)
 
 
 st.title('Famous Location/Landmarks Detection based on Image')
