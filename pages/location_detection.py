@@ -1,7 +1,7 @@
 import streamlit as st
 import base64
 import requests
-import gmaps
+# import gmaps
 import os
 from ipywidgets import embed
 import pandas as pd
@@ -13,8 +13,7 @@ import openai
 # gmapapi= os.environ["API_KEY"] 
 # gmaps.configure(api_key=gmapapi)
 # nyc = (40.75,-74.00)
-df = pd.DataFrame([{40.75,-74.00}],columns=['lat','lon'])
-st.map(df)
+
 # _map = gmaps.figure(center=nyc,zoom_level=12)
 # st.write(_map)
 # st.map(_map)
@@ -96,6 +95,10 @@ if img is not None:
     try:
         info = result['responses'][0]['landmarkAnnotations'][0]['description']
         coor = result['responses'][0]['landmarkAnnotations'][0]['locations'][0]['latLng']
+        lat = coor['latitude']
+        lon = coor['longitude']
+        df = pd.DataFrame([{lat,lon}],columns=['lat','lon'])
+        st.map(df)
         st.image(img)
         col1,col2  = st.columns(2)
         with col1:
