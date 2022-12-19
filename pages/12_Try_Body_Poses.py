@@ -73,4 +73,18 @@ def footer():
 
 
 if __name__ == "__main__":
+    st.title("Point your camera to a picture of a body pose or take your own video. Then click on try it, by pointing the camera at yourself to find out if you did the pose correctly.​")
+    col1,col2  = st.columns(2)
+    with col1:
+        st.video("https://www.youtube.com/watch?v=IODxDxX7oi4")
+        # st.write(gl)
+
+    with col2:
+        # st.header("Detected Entities")
+        # st.write(ent)
+        img_file_buffer = st.camera_input("Try it")
+        if img_file_buffer is not None:
+            st.image(img_file_buffer)
+            # encoded_image = base64.b64encode(img_file_buffer.read())
+            # result = callAPI(encoded_image)
     footer()
