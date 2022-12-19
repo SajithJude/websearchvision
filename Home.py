@@ -100,6 +100,14 @@ def footer():
 
 
 if __name__ == "__main__":
+    hide_st_style = """
+            <style>
+
+            footer {visibility: hidden;}
+           
+            </style>
+            """
+    st.markdown(hide_st_style, unsafe_allow_html=True)
 
     im = Image.open("images.png")
     st.set_page_config(
