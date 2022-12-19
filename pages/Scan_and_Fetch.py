@@ -116,17 +116,17 @@ else:
         # st.write(entities)
         if st.checkbox("Show wikipedia"):
             try:
-            WIKI = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].startswith('https://en.wikipedia.org/')]
-            st.subheader("WIKIPEDIA results")
-            st.write(WIKI)
+                WIKI = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].startswith('https://en.wikipedia.org/')]
+                st.subheader("WIKIPEDIA results")
+                st.write(WIKI)
             except:
                 st.write("NO wiki results")
         
         if st.checkbox("Show LinkedIn"):
             try:
-            linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].startswith('https://www.linkedin.com/')]
-            st.subheader("Linkedin results")
-            st.write(linkedInUrl)
+                linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].startswith('https://www.linkedin.com/')]
+                st.subheader("Linkedin results")
+                st.write(linkedInUrl)
             except:
                 st.write("NO LinkedIn results")
         
