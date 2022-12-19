@@ -72,8 +72,13 @@ else:
         result = callAPI(encoded_image)
         if st.checkbox("Show only Shopify"):
             try:
+                full_matching_image_urls = []
+                for item in result['responses'][0]['webDetection']['fullMatchingImages']:
+                    full_matching_image_urls.append(item['url'])
+                st.write(full_matching_image_urls)
                 st.subheader("Shopify product matches")
                 linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('shopify.com')]
+                
                 st.write(linkedInUrl)
                 inlik = map(lambda linkedInUrl: linkedInUrl[0]['url'], linkedInUrl)
                 for i in list(inlik):
