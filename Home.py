@@ -87,7 +87,7 @@ Augmented Reality Demos
         """
     )
 
-    st.captions(
+    st.caption(
     """
     Click on the Menu to select an augmented reality Scenario.
     """
