@@ -73,6 +73,6 @@ components.html(
 </html>
 
 
-      """,
+      """,width=500
     
 )
