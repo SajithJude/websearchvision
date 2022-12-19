@@ -179,9 +179,12 @@ if __name__ == "__main__":
 
                 # Make the request and get the response 
                 response = requests.get(requestUrl)
+                translatedText = response.json()[0]
 
                 # Get the translated text from the response 
-                translatedText = response.json()
+                for i in translatedText:
+                    st.write(translatedText[i][0])
+
                 # text_list = [item['text'] for item in json_list]
                 # Print the translated text 
                 st.write(translatedText)
