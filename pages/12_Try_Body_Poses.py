@@ -76,6 +76,7 @@ if __name__ == "__main__":
     st.caption("Point your camera to a picture of a body pose or take your own video. Then click on try it, by pointing the camera at yourself to find out if you did the pose correctly.​")
     col1,col2  = st.columns(2)
     with col1:
+        st.write("Trainer video")
         st.video("https://www.youtube.com/watch?v=IODxDxX7oi4")
         # st.write(gl)
 
