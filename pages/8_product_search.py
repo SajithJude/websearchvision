@@ -82,7 +82,7 @@ else:
                 # st.write(linkedInUrl)
                 # inlik = map(lambda linkedInUrl: linkedInUrl[0]['url'], linkedInUrl)
                 for item in linkedInUrl:
-                    st.image(item)
+                    st.image(item, width=150)
                     st.write(item)
                 if len(linkedInUrl)==0:
                     st.caption("No Products found in Amazon")
