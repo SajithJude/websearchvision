@@ -37,7 +37,7 @@ def callAPI(image):
             'url_filter_set': {
                 'url_filters': [
                     {
-                        'filter_type': vision.enums.WebDetectionParams.FilterType.CONTAINS,
+                        'filter_type': 'CONTAINS',
                         'value': 'wikipedia'
                     }
                 ]
