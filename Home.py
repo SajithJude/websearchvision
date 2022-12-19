@@ -93,7 +93,7 @@ Augmented Reality Demos
     """
 )
 
-    st.write("www.instancy.com","www.instancy.com")
+    st.write("www.instancy.com","Instancy Inc")
     footer()
 
 
