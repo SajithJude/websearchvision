@@ -103,13 +103,13 @@ if __name__ == "__main__":
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.write(' ')
+        st.write('     ')
 
     with col2:
         st.title("Home")
 
     with col3:
-        st.write(' ')
+        st.write('     ')
 
     cols1, cols2, cols3 = st.columns(3)
 
