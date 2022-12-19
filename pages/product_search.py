@@ -71,7 +71,7 @@ else:
         encoded_image = base64.b64encode(img.read())
         result = callAPI(encoded_image)
         try:
-            info = result['responses']
+            info = result
             st.image(img)
             st.text("#Detected Text Results From uploaded Image")
             st.write(info)
