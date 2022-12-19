@@ -124,7 +124,7 @@ else:
         
         if st.checkbox("Show LinkedIn"):
             try:
-                linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].startswith('https://www.linkedin.com/')]
+                linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('linkedin.com')]
                 st.subheader("Linkedin results")
                 st.write(linkedInUrl)
             except:
