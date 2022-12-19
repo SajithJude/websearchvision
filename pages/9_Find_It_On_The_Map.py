@@ -133,6 +133,6 @@ if img is not None:
     except: 
         st.write("An exception occurred")
         # st.text("##API response Body")
-        st.write(result)
+        # st.write(result)
         
 
