@@ -72,7 +72,7 @@ def footer():
         image('https://cdn-apinb.nitrocdn.com/LGFQTZTBRQFYZkDHnBAkeTYvUEPBCNKO/assets/static/optimized/rev-f886686/wp-content/uploads/2022/11/logo-instancy.png',
               width=px(25), height=px(25)),
         "  by ",
-        link("www.instancy.com"),
+        link("www.instancy.com","Instancy Inc"),
         br(),
     ]
     layout(*myargs)
@@ -93,7 +93,7 @@ Augmented Reality Demos
     """
 )
 
-    st.write("www.instancy.com","Instancy Inc")
+    # st.write("www.instancy.com")
     footer()
 
 
