@@ -109,6 +109,16 @@ if __name__ == "__main__":
     translator = Translator()
     api_key = os.environ["API_KEY"] 
 
+    sourceLang = st.selectbox(
+    'Select source language?',
+    ('en', 'hi', 'ta', 'zh-CN'))
+    targetLang = st.selectbox(
+    'Select source language?',
+    ('en', 'hi', 'ta', 'zh-CN'))
+
+                # Specify the target language 
+    #  = 'es'
+
     cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
     if cam =='Open Webcam':
         img_file_buffer = st.camera_input("Take a picture")
@@ -121,10 +131,7 @@ if __name__ == "__main__":
                 st.caption("Text Recognized")
                 st.write(info)
                 # Specify the source language 
-                sourceLang = 'en'
 
-                # Specify the target language 
-                targetLang = 'es'
 
                 # Google Translate API URL 
                 apiUrl = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl={}&tl={}&dt=t&q={}'
@@ -162,10 +169,7 @@ if __name__ == "__main__":
                 st.image(img)
                 st.caption("Text Recognized")
                 st.write(info)
-                sourceLang = 'en'
 
-                # Specify the target language 
-                targetLang = 'es'
 
                 # Google Translate API URL 
                 apiUrl = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl={}&tl={}&dt=t&q={}'
