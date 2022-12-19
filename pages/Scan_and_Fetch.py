@@ -29,7 +29,25 @@ def callAPI(image):
                         'type':'WEB_DETECTION',
                         'maxResults':5
                     }
+                ],
+    'image_context': {
+        'web_detection_params': {
+            'include_geo_results': 'false',
+            'include_annotations': 'true',
+            'url_filter_set': {
+                'url_filters': [
+                    {
+                        'filter_type': vision.enums.WebDetectionParams.FilterType.CONTAINS,
+                        'value': 'wikipedia'
+                    }
                 ]
+            }
+        }
+    }
+
+
+
+
             }
         ]
     }
