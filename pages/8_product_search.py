@@ -74,7 +74,7 @@ else:
             try:
                 linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('amazon.com')]
                 st.subheader("Amazon product matches")
-                inlik = map(lambda linkedInUrl: linkedInUrl[0]['url'], linkedInUrl)
+                inlik = map(lambda pageinfo: linkedInUrl[0]['url'], linkedInUrl)
                 for i in list(inlik):
                     st.write(i)
                 if len(inlik)==0:
