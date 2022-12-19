@@ -77,7 +77,7 @@ else:
                     full_matching_image_urls.append(item['url'])
                 st.write(full_matching_image_urls)
                 st.subheader("Shopify product matches")
-                linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('shopify.com')]
+                linkedInUrl = [site for site in full_matching_image_urls if site['url'].__contains__('shopify.com')]
                 
                 st.write(linkedInUrl)
                 inlik = map(lambda linkedInUrl: linkedInUrl[0]['url'], linkedInUrl)
