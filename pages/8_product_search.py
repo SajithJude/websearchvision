@@ -116,11 +116,11 @@ else:
             info = result['responses'][0]['webDetection']['pagesWithMatchingImages']
             st.image(img)
             st.text("#Detected Text Results From uploaded Image")
-            st.write(info)
+            st.table(info)
 
         except: 
             st.write("An exception occurred")
-            st.text("##API response Body")
-            st.write(result)
+            # st.text("##API response Body")
+            # st.write(result)
         
 
