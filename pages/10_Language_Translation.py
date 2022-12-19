@@ -105,6 +105,7 @@ def footer():
 
 if __name__ == "__main__":
     translator = Translator()
+    api_key = os.environ["API_KEY"] 
 
     cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
     if cam =='Open Webcam':
