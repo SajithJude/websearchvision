@@ -82,7 +82,7 @@ if cam =='Open Webcam':
         try:
 
             WIKI = [site for site in data['webDetection']['webEntities'] if site['entityId'].startswith('https://en.wikipedia.org/')]
-            st.subheader("WIKIPEDIA RESULTS")
+            st.subheader("WIKIPEDIA results")
             st.write(WIKI)
         except:
             st.write("NO wiki results")
@@ -156,6 +156,12 @@ else:
         guesslabels =result['responses'][0]['webDetection']['bestGuessLabels']
         guesslab = [guesslabels['label'] for guesslabels in guesslabels if 'label' in guesslabels]
         gl =  ' '.join(guesslab)
+        try:
+            WIKI = [site for site in data['webDetection']['webEntities'] if site['entityId'].startswith('https://en.wikipedia.org/')]
+            st.subheader("WIKIPEDIA results")
+            st.write(WIKI)
+        except:
+            st.write("NO wiki results")
 
         col1 ,col2 = st.columns(2)
 
