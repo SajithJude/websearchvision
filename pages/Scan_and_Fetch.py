@@ -121,7 +121,7 @@ else:
                 wiks = map(lambda pageinfo: WIKI[0]['url'], WIKI)
                 for i in list(wiks):
                     st.write(i)
-                    if not i:
+                    if len(wiks)==0:
                         st.caption("No Wikipedia pages found")
             except:
                 st.write("NO wiki results")
@@ -133,8 +133,8 @@ else:
                 inlik = map(lambda pageinfo: linkedInUrl[0]['url'], linkedInUrl)
                 for i in list(inlik):
                     st.write(i)
-                if not wiks:
-                    st.caption("No Wikipedia pages found")
+                if len(inlik)==0:
+                    st.caption("No LinkedIn pages found")
                 # st.write(linkedInUrl)
             except:
                 st.write("NO LinkedIn results")
