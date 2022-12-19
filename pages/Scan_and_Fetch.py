@@ -148,11 +148,15 @@ else:
     if img is not None:
         encoded_image = base64.b64encode(img.read())
         result = callAPI(encoded_image)
-        # try:
-            # info = result['responses'][0]['textAnnotations'][0]['description']
-            # st.image(img)
-        # st.text("#Detected Text Results From uploaded Image")
-        # st.write(result)
+        try:
+            info = result['responses'][0]
+            st.image(img)
+            st.text("#Detected Text Results From uploaded Image")
+            st.write(result)
+        except:
+            st.write(result)
+
+
         pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
         # lsr = []
         # # [pageinfo['value'] for pageinfo in l if 'value' in pageinfo]
