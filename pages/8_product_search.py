@@ -7,7 +7,7 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 
-st.title('Image Recognition')
+st.title('Product Search')
 cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
 # upload = st.checkbox('Upload an Image')
 
