@@ -116,7 +116,7 @@ else:
         # st.write(entities)
         if st.checkbox("Show wikipedia"):
             try:
-                WIKI = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].startswith('https://en.wikipedia.org/')]
+                WIKI = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('wikipedia.org')]
                 st.subheader("WIKIPEDIA results")
                 st.write(WIKI)
             except:
