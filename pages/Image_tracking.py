@@ -4,7 +4,7 @@ from PIL import Image
 # container_width = st.get_container_width
 # width = st.javascript('window.screen.width')
 st.set_page_config(layout="wide")
-image = Image.open('frame.png')
+image = Image.open('pages/frame.png')
 
 st.title("Scan the QR code to view the demo")
 st.image(image)
