@@ -49,6 +49,7 @@ if cam =='Open Webcam':
         encoded_image = base64.b64encode(img_file_buffer.read())
         result = callAPI(encoded_image)
         full_matching_image_urls = []
+        st.subheader("Matching Products in the Web")
         for item in result['responses'][0]['webDetection']['fullMatchingImages']:
             full_matching_image_urls.append(item['url'])
         # st.write(full_matching_image_urls)
