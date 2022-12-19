@@ -6,7 +6,8 @@ import json
 import openai
 import os
 
-st.title('Scan Image and fetch information')
+st.title('Face Recognition')
+st.write("​Point the camera to a person or a photo of the person to learn more about that person ​")
 cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
 # upload = st.checkbox('Upload an Image')
 
@@ -69,7 +70,7 @@ if cam =='Open Webcam':
         guesslab = [guesslabels['label'] for guesslabels in guesslabels if 'label' in guesslabels]
         gl =  ' '.join(guesslab)
         try:
-            WIKI = [site for site in data['webDetection']['webEntities'] if site['entityId'].startswith('https://en.wikipedia.org/')]
+            WIKI = [site for site in result['responses'][0]['webDetection']['webEntities'] if site['entityId'].startswith('https://en.wikipedia.org/')]
             st.subheader("WIKIPEDIA results")
             st.write(WIKI)
         except:
@@ -100,7 +101,7 @@ if cam =='Open Webcam':
         st.table(pageinfo)
         st.table(result['responses'][0])
 
-        st.write(result) 
+        # st.write(result) 
 
         
 
@@ -178,6 +179,6 @@ else:
         st.write(resp.choices[0].text)
 
         st.table(pageinfo)
-        st.table(result['responses'][0])
+        # st.table(result['responses'][0])
 
-        st.write(result)
+        # st.write(result)

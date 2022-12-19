@@ -7,7 +7,7 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 
-st.title('OCR text Detection')
+st.title('Optical Character Recognition')
 cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
 # upload = st.checkbox('Upload an Image')
 
@@ -51,18 +51,18 @@ if cam =='Open Webcam':
         try:
             info = result['responses'][0]['textAnnotations'][0]['description']
             st.image(img_file_buffer)
-            st.write("Detected Text Results From Web camera snapshot")
+            st.caption("Text Recognized")
             st.write(info)
-            st.write("""
-            #API response Body
-            """)
-            st.write(result) 
+            # st.write("""
+            # #API response Body
+            # """)
+            # st.write(result) 
 
 
         except: 
             st.write("An exception occurred")
-            st.write("##API response Body")
-            st.write(result) 
+            # st.write("##API response Body")
+            # st.write(result) 
         
 
 else:
@@ -73,12 +73,12 @@ else:
         try:
             info = result['responses'][0]['textAnnotations'][0]['description']
             st.image(img)
-            st.text("#Detected Text Results From uploaded Image")
+            st.caption("Text Recognized")
             st.write(info)
 
         except: 
             st.write("An exception occurred")
-            st.text("##API response Body")
-            st.write(result)
+            # st.text("##API response Body")
+            # st.write(result)
         
 

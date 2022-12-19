@@ -4,6 +4,8 @@ import requests
 import json
 import os
 
+st.title("Face Emotion Detection")
+st.caption("Point the camera to a persons photo, the face of a real person, or your own face to detect the emotions.​")
 img_file_buffer = st.camera_input("Take a picture")
 
 if img_file_buffer is not None:

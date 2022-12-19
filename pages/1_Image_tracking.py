@@ -5,7 +5,7 @@ from PIL import Image
 # width = st.javascript('window.screen.width')
 st.set_page_config(layout="wide")
 image = Image.open('pages/frame.png')
-
+st.title("Image Tracking")
 # st.title("Scan the QR code to view the demo")
 st.image(image)
 st.subheader("To View, open camera on smartphone and scan code")

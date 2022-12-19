@@ -5,7 +5,7 @@ from PIL import Image
 # width = st.javascript('window.screen.width')
 st.set_page_config(layout="wide")
 image2 = Image.open('pages/ground.png')
-
+st.title("Ground Tracking 3D Scene​")
 
 st.image(image2)
 st.subheader("To View, open camera on smartphone and scan code")
