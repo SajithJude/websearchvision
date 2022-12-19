@@ -99,7 +99,6 @@ def footer():
 
 
 if __name__ == "__main__":
-    set_png_as_page_bg('Frame 1 (9).png')
     # st.set_theme('primary_color', primary_color='#BFD731')
 
     st.title("Home")
