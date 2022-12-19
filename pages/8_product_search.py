@@ -48,21 +48,61 @@ if cam =='Open Webcam':
     if img_file_buffer is not None:
         encoded_image = base64.b64encode(img_file_buffer.read())
         result = callAPI(encoded_image)
+        full_matching_image_urls = []
+        for item in result['responses'][0]['webDetection']['fullMatchingImages']:
+            full_matching_image_urls.append(item['url'])
+        # st.write(full_matching_image_urls)
+        for item in full_matching_image_urls:
+            st.image(item, width=150)
+            st.write(item)
+
+        if st.checkbox("Show only Shopify"):
+            try:
+                
+                st.subheader("Shopify product matches")
+                linkedInUrl = [site for site in full_matching_image_urls if "shopify.com" in site]
+                
+                # st.write(linkedInUrl)
+                # inlik = map(lambda linkedInUrl: linkedInUrl[0]['url'], linkedInUrl)
+                for item in linkedInUrl:
+                    st.image(item, width=150)
+                    st.write(item)
+                if len(linkedInUrl)==0:
+                    st.caption("No Products found in flipkart")
+                # st.write(linkedInUrl)
+            except:
+                st.write("API EXCEPtoin error")
+
+        if st.checkbox("Show only flipkart"):
+            try:
+                
+                st.subheader("flipkart product matches")
+                linkedInUrl = [site for site in full_matching_image_urls if "flipkart.com" in site]
+                
+                # st.write(linkedInUrl)
+                # inlik = map(lambda linkedInUrl: linkedInUrl[0]['url'], linkedInUrl)
+                for item in linkedInUrl:
+                    st.image(item, width=150)
+                    st.write(item)
+                if len(linkedInUrl)==0:
+                    st.caption("No Products found in flipkart")
+                # st.write(linkedInUrl)
+            except:
+                st.write("API EXCEPtoin error")
+        
         try:
             info = result['responses'][0]['webDetection']['pagesWithMatchingImages']
-            st.image(img_file_buffer)
-            st.write("Detected Text Results From Web camera snapshot")
+            st.image(img)
+            st.text("#Detected Text Results From uploaded Image")
             st.write(info)
-            st.write("""
-            #API response Body
-            """)
-            st.write(result) 
-
 
         except: 
             st.write("An exception occurred")
-            st.write("##API response Body")
-            st.write(result) 
+            st.text("##API response Body")
+            st.write(result)
+        
+
+
         
 
 else:
