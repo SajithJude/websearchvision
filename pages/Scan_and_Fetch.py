@@ -126,9 +126,9 @@ else:
             try:
                 linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('linkedin.com')]
                 st.subheader("Linkedin results")
-                # inlik = map(lambda pageinfo: linkedInUrl['url'], linkedInUrl)
-                # for i in list(inlik):
-                #     st.write(i)
+                inlik = map(lambda pageinfo: linkedInUrl[0]['url'], linkedInUrl)
+                for i in list(inlik):
+                    st.write(i)
 
                 st.write(linkedInUrl)
             except:
