@@ -157,7 +157,7 @@ else:
         guesslab = [guesslabels['label'] for guesslabels in guesslabels if 'label' in guesslabels]
         gl =  ' '.join(guesslab)
         try:
-            WIKI = [site for site in result['responses'][0]['webDetection']['webEntities'] if site['entityId'].startswith('https://en.wikipedia.org/')]
+            WIKI = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].startswith('https://en.wikipedia.org/')]
             st.subheader("WIKIPEDIA results")
             st.write(WIKI)
         except:
