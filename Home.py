@@ -6,7 +6,6 @@ from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, class
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
 
-st.set_theme('primary_color', primary_color='#BFD731')
 def image(src_as_string, **style):
     return img(src=src_as_string, style=styles(**style))
 
@@ -77,7 +76,10 @@ def footer():
 
 
 if __name__ == "__main__":
+    st.set_theme('primary_color', primary_color='#BFD731')
+
     st.title("Home")
+
     st.image('https://cdn-apinb.nitrocdn.com/LGFQTZTBRQFYZkDHnBAkeTYvUEPBCNKO/assets/static/optimized/rev-f886686/wp-content/uploads/2022/11/logo-instancy.png')
     st.subheader(
         """
