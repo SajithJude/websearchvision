@@ -183,7 +183,7 @@ if __name__ == "__main__":
 
                 # Get the translated text from the response 
                 for i in translatedText:
-                    st.write(translatedText[i][0])
+                    st.write(i[0])
 
                 # text_list = [item['text'] for item in json_list]
                 # Print the translated text 
