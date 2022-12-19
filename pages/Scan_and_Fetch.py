@@ -118,6 +118,7 @@ else:
             try:
                 WIKI = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('wikipedia.org')]
                 st.subheader("WIKIPEDIA results")
+                wiks = map(lambda pageinfo: WIKI[0]['url'], WIKI)
                 st.write(WIKI)
             except:
                 st.write("NO wiki results")
