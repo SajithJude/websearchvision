@@ -9,4 +9,4 @@ image = Image.open('pages/frame.png')
 st.title("Scan the QR code to view the demo")
 st.image(image)
 # embed streamlit docs in a streamlit app
-components.iframe("https://sajithjude.github.io/instancy/",height=400)
+# components.iframe("https://sajithjude.github.io/instancy/",height=400)
