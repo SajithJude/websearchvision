@@ -76,7 +76,7 @@ def footer():
 
 
 if __name__ == "__main__":
-    st.set_theme('primary_color', primary_color='#BFD731')
+    # st.set_theme('primary_color', primary_color='#BFD731')
 
     st.title("Home")
 
