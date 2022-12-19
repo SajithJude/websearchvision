@@ -187,7 +187,7 @@ if __name__ == "__main__":
 
                 # text_list = [item['text'] for item in json_list]
                 # Print the translated text 
-                st.write(translatedText)
+                # st.write(translatedText)
                 # st.write("""
                 # #API response Body
                 # """)
