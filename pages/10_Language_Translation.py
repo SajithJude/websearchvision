@@ -177,7 +177,7 @@ if __name__ == "__main__":
                 response = requests.get(requestUrl)
 
                 # Get the translated text from the response 
-                translatedText = response.json()
+                translatedText = response.json()[0][0][0]
                 
                 # Print the translated text 
                 st.write(translatedText)
