@@ -82,6 +82,7 @@ if cam =='Open Webcam':
         try:
 
             WIKI = [site for site in data['webDetection']['webEntities'] if site['entityId'].startswith('https://en.wikipedia.org/')]
+            st.subheader("WIKIPEDIA RESULTS")
             st.write(WIKI)
         except:
             st.write("NO wiki results")
