@@ -119,7 +119,8 @@ else:
                 WIKI = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('wikipedia.org')]
                 st.subheader("WIKIPEDIA results")
                 wiks = map(lambda pageinfo: WIKI[0]['url'], WIKI)
-                st.write(WIKI)
+                for i in list(wiks):
+                    st.write(i)
             except:
                 st.write("NO wiki results")
         
@@ -131,7 +132,7 @@ else:
                 for i in list(inlik):
                     st.write(i)
 
-                st.write(linkedInUrl)
+                # st.write(linkedInUrl)
             except:
                 st.write("NO LinkedIn results")
         
