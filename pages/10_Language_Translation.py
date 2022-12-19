@@ -120,7 +120,7 @@ if __name__ == "__main__":
                 st.image(img_file_buffer)
                 st.caption("Text Recognized")
                 st.write(info)
-                translated_text = translator.translate(info, dest='<tam>').info
+                translated_text = translator.translate(info, dest='<ta>').info
                 st.write(translated_text)
                 # st.write("""
                 # #API response Body
