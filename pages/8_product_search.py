@@ -70,15 +70,17 @@ else:
     if img is not None:
         encoded_image = base64.b64encode(img.read())
         result = callAPI(encoded_image)
+        full_matching_image_urls = []
+        for item in result['responses'][0]['webDetection']['fullMatchingImages']:
+            full_matching_image_urls.append(item['url'])
+        # st.write(full_matching_image_urls)
+        for item in full_matching_image_urls:
+            st.image(item, width=150)
+            st.write(item)
+
         if st.checkbox("Show only Shopify"):
             try:
-                full_matching_image_urls = []
-                for item in result['responses'][0]['webDetection']['fullMatchingImages']:
-                    full_matching_image_urls.append(item['url'])
-                # st.write(full_matching_image_urls)
-                for item in full_matching_image_urls:
-                    st.image(item, width=150)
-                    st.write(item)
+                
                 st.subheader("Shopify product matches")
                 linkedInUrl = [site for site in full_matching_image_urls if "shopify.com" in site]
                 
@@ -88,7 +90,24 @@ else:
                     st.image(item, width=150)
                     st.write(item)
                 if len(linkedInUrl)==0:
-                    st.caption("No Products found in Amazon")
+                    st.caption("No Products found in flipkart")
+                # st.write(linkedInUrl)
+            except:
+                st.write("API EXCEPtoin error")
+
+        if st.checkbox("Show only flipkart"):
+            try:
+                
+                st.subheader("flipkart product matches")
+                linkedInUrl = [site for site in full_matching_image_urls if "flipkart.com" in site]
+                
+                # st.write(linkedInUrl)
+                # inlik = map(lambda linkedInUrl: linkedInUrl[0]['url'], linkedInUrl)
+                for item in linkedInUrl:
+                    st.image(item, width=150)
+                    st.write(item)
+                if len(linkedInUrl)==0:
+                    st.caption("No Products found in flipkart")
                 # st.write(linkedInUrl)
             except:
                 st.write("API EXCEPtoin error")
