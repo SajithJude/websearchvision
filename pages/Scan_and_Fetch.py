@@ -121,8 +121,8 @@ else:
                 wiks = map(lambda pageinfo: WIKI[0]['url'], WIKI)
                 for i in list(wiks):
                     st.write(i)
-                if not wiks:
-                    st.caption("No Wikipedia pages found")
+                    if not i:
+                        st.caption("No Wikipedia pages found")
             except:
                 st.write("NO wiki results")
         
