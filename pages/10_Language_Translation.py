@@ -120,8 +120,26 @@ if __name__ == "__main__":
                 st.image(img_file_buffer)
                 st.caption("Text Recognized")
                 st.write(info)
-                translated_text = translator.translate(info, dest='<ta>').info
-                st.write(translated_text)
+                # Specify the source language 
+                sourceLang = 'en'
+
+                # Specify the target language 
+                targetLang = 'es'
+
+                # Google Translate API URL 
+                apiUrl = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl={}&tl={}&dt=t&q={}'
+
+                # Form the request URL 
+                requestUrl = apiUrl.format(sourceLang, targetLang, info)
+
+                # Make the request and get the response 
+                response = requests.get(requestUrl)
+
+                # Get the translated text from the response 
+                translatedText = response.json()[0][0][0]
+
+                # Print the translated text 
+                st.write(translatedText)
                 # st.write("""
                 # #API response Body
                 # """)
