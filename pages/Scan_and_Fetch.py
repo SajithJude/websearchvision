@@ -29,23 +29,7 @@ def callAPI(image):
                         'type':'WEB_DETECTION',
                         'maxResults':5
                     }
-                ],
-    'image_context': {
-        'web_detection_params': {
-            'url_filter_set': {
-                'url_filters': [
-                    {
-                        'filter_type': 'CONTAINS',
-                        'value': 'wikipedia'
-                    }
                 ]
-            }
-        }
-    }
-
-
-
-
             }
         ]
     }
@@ -95,7 +79,12 @@ if cam =='Open Webcam':
         guesslabels =result['responses'][0]['webDetection']['bestGuessLabels']
         guesslab = [guesslabels['label'] for guesslabels in guesslabels if 'label' in guesslabels]
         gl =  ' '.join(guesslab)
+        try:
 
+            WIKI = [site for site in data['webDetection']['webEntities'] if site['entityId'].startswith('https://en.wikipedia.org/')]
+            st.write(WIKI)
+        except:
+            st.write("NO wiki results")
         col1 ,col2 = st.columns(2)
 
         with col1:
@@ -146,15 +135,11 @@ else:
     if img is not None:
         encoded_image = base64.b64encode(img.read())
         result = callAPI(encoded_image)
-        try:
-            info = result['responses'][0]
-            st.image(img)
-            st.text("#Detected Text Results From uploaded Image")
-            st.write(result)
-        except:
-            st.write(result)
-
-
+        # try:
+            # info = result['responses'][0]['textAnnotations'][0]['description']
+            # st.image(img)
+        # st.text("#Detected Text Results From uploaded Image")
+        # st.write(result)
         pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
         # lsr = []
         # # [pageinfo['value'] for pageinfo in l if 'value' in pageinfo]
