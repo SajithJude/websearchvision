@@ -64,22 +64,16 @@ if cam =='Open Webcam':
             lnk = ent
         except:
             st.write("No Page Entities  Found for this image")
-            # global e
-
-
-        # lsr = []
-        # # [pageinfo['value'] for pageinfo in l if 'value' in pageinfo]
-        
-        # for url in pageinfo.items():
-        #     lsr.append(url)
-       
-        # st.write(entities)
-
 
         guesslabels =result['responses'][0]['webDetection']['bestGuessLabels']
         guesslab = [guesslabels['label'] for guesslabels in guesslabels if 'label' in guesslabels]
         gl =  ' '.join(guesslab)
-
+        try:
+            WIKI = [site for site in data['webDetection']['webEntities'] if site['entityId'].startswith('https://en.wikipedia.org/')]
+            st.subheader("WIKIPEDIA results")
+            st.write(WIKI)
+        except:
+            st.write("NO wiki results")
         col1 ,col2 = st.columns(2)
 
         with col1:
@@ -89,17 +83,7 @@ if cam =='Open Webcam':
         with col2:
             st.header("Detected Entities")
             st.write(ent)
-            # st.write(annotation['joyLikelihood']) 
-        # st.write(gl)
 
-        # link = map(lambda pageinfo: pageinfo['url'], pageinfo)
-        # for i in list(link):
-        #     st.write(i)
-        #     st.image(i,width=100)
-        # # for key in link.keys()):
-        #     st.image(str(link[key]))
-        # lnk = ' '.join(link)
-        # st.write(lnk)
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-002",
@@ -118,11 +102,6 @@ if cam =='Open Webcam':
 
         st.write(result) 
 
-
-        # except: 
-        #     st.write("An exception occurred")
-        #     st.write("##API response Body")
-        #     st.write(result) 
         
 
 else:
@@ -130,45 +109,59 @@ else:
     if img is not None:
         encoded_image = base64.b64encode(img.read())
         result = callAPI(encoded_image)
-        # try:
-            # info = result['responses'][0]['textAnnotations'][0]['description']
-            # st.image(img)
-        # st.text("#Detected Text Results From uploaded Image")
-        # st.write(result)
         pageinfo = result['responses'][0]['webDetection']['pagesWithMatchingImages']
-        # lsr = []
-        # # [pageinfo['value'] for pageinfo in l if 'value' in pageinfo]
-        
-        # for url in pageinfo.items():
-        #     lsr.append(url)
         webent =result['responses'][0]['webDetection']['webEntities']
         entities = [webent['description'] for webent in webent if 'description' in webent]
         ent =  ' , '.join(entities)
         # st.write(entities)
+        if st.checkbox("Show wikipedia"):
+            try:
+                WIKI = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('wikipedia.org')]
+                st.subheader("WIKIPEDIA results")
+                wiks = map(lambda pageinfo: WIKI[0]['url'], WIKI)
+                for i in list(wiks):
+                    st.write(i)
+                    if len(wiks)==0:
+                        st.caption("No Wikipedia pages found")
+            except:
+                st.write("NO wiki results")
+        
+        if st.checkbox("Show LinkedIn"):
+            try:
+                linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('linkedin.com')]
+                st.subheader("Linkedin results")
+                inlik = map(lambda pageinfo: linkedInUrl[0]['url'], linkedInUrl)
+                for i in list(inlik):
+                    st.write(i)
+                if len(inlik)==0:
+                    st.caption("No LinkedIn pages found")
+                # st.write(linkedInUrl)
+            except:
+                st.write("NO LinkedIn results")
+        
+
+
+        
 
 
         guesslabels =result['responses'][0]['webDetection']['bestGuessLabels']
         guesslab = [guesslabels['label'] for guesslabels in guesslabels if 'label' in guesslabels]
         gl =  ' '.join(guesslab)
+        
 
         col1 ,col2 = st.columns(2)
-
         with col1:
             st.header("Image annotation")
             st.write(gl)
-
         with col2:
             st.header("Detected Entities")
             st.write(ent)
-            # st.write(annotation['joyLikelihood']) 
-        # st.write(gl)
+
 
         link = map(lambda pageinfo: pageinfo['url'], pageinfo)
         for i in list(link):
             st.write(i)
             st.image(i,width=100)
-        # # for key in link.keys()):
-        #     st.image(str(link[key]))
         lnk = ' '.join(link)
         st.write(lnk)
         openai.api_key =  os.getenv("OPENAI_API_KEY")
@@ -188,11 +181,3 @@ else:
         st.table(result['responses'][0])
 
         st.write(result)
-        # st.write(resp)
-
-        # except: 
-        #     st.write("An exception occurred")
-        #     st.text("##API response Body")
-        #     st.write(result)
-        
-
