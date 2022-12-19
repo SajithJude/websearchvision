@@ -69,9 +69,7 @@ def layout(*args):
 def footer():
     myargs = [
         "Made with ❤️ from ",
-        image('https://cdn-apinb.nitrocdn.com/LGFQTZTBRQFYZkDHnBAkeTYvUEPBCNKO/assets/static/optimized/rev-f886686/wp-content/uploads/2022/11/logo-instancy.png',
-              width=px(25), height=px(25)),
-        "  by ",
+        
         link("www.instancy.com","Instancy Inc"),
         br(),
     ]
