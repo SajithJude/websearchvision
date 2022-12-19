@@ -32,8 +32,6 @@ def callAPI(image):
                 ],
     'image_context': {
         'web_detection_params': {
-            'include_geo_results': 'false',
-            'include_annotations': 'true',
             'url_filter_set': {
                 'url_filters': [
                     {
