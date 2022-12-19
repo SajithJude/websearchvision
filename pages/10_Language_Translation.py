@@ -5,6 +5,7 @@ from htbuilder.funcs import rgba, rgb
 from googletrans import Translator
 import base64
 import os
+import requests
 
 def image(src_as_string, **style):
     return img(src=src_as_string, style=styles(**style))
