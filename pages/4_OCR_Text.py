@@ -3,9 +3,9 @@ import base64
 import requests
 import json
 import os
-from PIL import Image
-from PIL import ImageFont
-from PIL import ImageDraw
+# from PIL import Image
+# from PIL import ImageFont
+# from PIL import ImageDraw
 
 st.title('Optical Character Recognition')
 cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
