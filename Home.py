@@ -100,10 +100,29 @@ def footer():
 
 if __name__ == "__main__":
     # st.set_theme('primary_color', primary_color='#BFD731')
+    col1, col2, col3 = st.columns(3)
 
-    st.title("Home")
+    with col1:
+        st.write(' ')
 
-    st.image('https://cdn-apinb.nitrocdn.com/LGFQTZTBRQFYZkDHnBAkeTYvUEPBCNKO/assets/static/optimized/rev-f886686/wp-content/uploads/2022/11/logo-instancy.png')
+    with col2:
+        st.title("Home")
+
+    with col3:
+        st.write(' ')
+
+    cols1, cols2, cols3 = st.columns(3)
+
+    with cols1:
+        st.write(' ')
+
+    with cols2:
+        st.image('https://cdn-apinb.nitrocdn.com/LGFQTZTBRQFYZkDHnBAkeTYvUEPBCNKO/assets/static/optimized/rev-f886686/wp-content/uploads/2022/11/logo-instancy.png')
+
+
+    with cols3:
+        st.write(' ') 
+
     st.subheader(
         """
 Augmented Reality Demos
