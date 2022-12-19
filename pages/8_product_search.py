@@ -76,6 +76,9 @@ else:
                 for item in result['responses'][0]['webDetection']['fullMatchingImages']:
                     full_matching_image_urls.append(item['url'])
                 # st.write(full_matching_image_urls)
+                for item in full_matching_image_urls:
+                    st.image(item, width=150)
+                    st.write(item)
                 st.subheader("Shopify product matches")
                 linkedInUrl = [site for site in full_matching_image_urls if "shopify.com" in site]
                 
