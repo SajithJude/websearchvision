@@ -73,4 +73,6 @@ def footer():
 
 
 if __name__ == "__main__":
+    st.title("Allow this demo app to detect your location and display a video from YouTube about that location.​")
+    st.button("Allow and start")
     footer()

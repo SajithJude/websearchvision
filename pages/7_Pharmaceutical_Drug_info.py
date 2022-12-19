@@ -6,7 +6,8 @@ import os
 import openai
 # import os
 
-st.title('Drug information and cross interaction Detection')
+st.title('Pharmaceutical Drug Info​')
+st.write("​Point the camera to the image of an image of a pharmaceutical drug to learn more about that product.​")
 cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
 # upload = st.checkbox('Upload an Image')
 

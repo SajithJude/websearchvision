@@ -152,10 +152,10 @@ else:
 
         col1 ,col2 = st.columns(2)
         with col1:
-            st.header("Image annotation")
+            st.header("Person Recognized")
             st.write(gl)
         with col2:
-            st.header("Detected Entities")
+            st.header("Persons Labels")
             st.write(ent)
 
 

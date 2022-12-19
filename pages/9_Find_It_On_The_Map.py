@@ -22,7 +22,8 @@ import openai
 # components.html(html, height=500,width=500)
 
 
-st.title('Famous Location/Landmarks Detection based on Image')
+st.title('Find it On the Map')
+st.write("​Point the camera to the image of a famous building and view the location on the map​")
 # cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
 # upload = st.checkbox('Upload an Image')
 
