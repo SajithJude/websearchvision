@@ -113,7 +113,7 @@ if __name__ == "__main__":
     'Select source language?',
     ('en', 'hi', 'ta', 'zh-CN'))
     targetLang = st.selectbox(
-    'Select source language?',
+    'Select target language?',
     ('en', 'hi', 'ta', 'zh-CN'))
 
                 # Specify the target language 
