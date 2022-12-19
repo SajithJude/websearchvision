@@ -70,10 +70,10 @@ else:
     if img is not None:
         encoded_image = base64.b64encode(img.read())
         result = callAPI(encoded_image)
-        if st.checkbox("Show Amazon"):
+        if st.checkbox("Show only Shopify"):
             try:
-                linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('amazon.com')]
-                st.subheader("Amazon product matches")
+                linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('shopify.com')]
+                st.subheader("Shopify product matches")
                 inlik = map(lambda pageinfo: linkedInUrl[0]['url'], linkedInUrl)
                 for i in list(inlik):
                     st.write(i)
