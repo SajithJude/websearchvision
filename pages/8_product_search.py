@@ -49,7 +49,7 @@ if cam =='Open Webcam':
         encoded_image = base64.b64encode(img_file_buffer.read())
         result = callAPI(encoded_image)
         try:
-            info = result['responses'][0]['results'][0]['description']
+            info = result['responses'][0]['webDetection']['pagesWithMatchingImages']
             st.image(img_file_buffer)
             st.write("Detected Text Results From Web camera snapshot")
             st.write(info)
@@ -70,8 +70,21 @@ else:
     if img is not None:
         encoded_image = base64.b64encode(img.read())
         result = callAPI(encoded_image)
+        if st.checkbox("Show Amazon"):
+            try:
+                linkedInUrl = [site for site in result['responses'][0]['webDetection']['pagesWithMatchingImages'] if site['url'].__contains__('amazon.com')]
+                st.subheader("Amazon product matches")
+                inlik = map(lambda linkedInUrl: linkedInUrl[0]['url'], linkedInUrl)
+                for i in list(inlik):
+                    st.write(i)
+                if len(inlik)==0:
+                    st.caption("No Products found in Amazon")
+                # st.write(linkedInUrl)
+            except:
+                st.write("API EXCEPtoin error")
+        
         try:
-            info = result
+            info = result['responses'][0]['webDetection']['pagesWithMatchingImages']
             st.image(img)
             st.text("#Detected Text Results From uploaded Image")
             st.write(info)
