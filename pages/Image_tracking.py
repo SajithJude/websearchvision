@@ -2,11 +2,11 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.title("Face tracking using face landmark detectioon using googles opensource mediapipe framework..")
-"""
-This demo would just capture the incput from camera and and detect allavailable landmarks on te humanface,
-and would connect all points that would make it seem like a mesh, I havent found any usecases for this at the moment, 
-But I feel it could make some impact on drowsiness detection during online lectures and attention tracking
-"""
+# """
+# This demo would just capture the incput from camera and and detect allavailable landmarks on te humanface,
+# and would connect all points that would make it seem like a mesh, I havent found any usecases for this at the moment, 
+# But I feel it could make some impact on drowsiness detection during online lectures and attention tracking
+# """
 
 components.html(
     """
