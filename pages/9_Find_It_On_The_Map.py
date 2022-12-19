@@ -110,7 +110,10 @@ if img is not None:
             # st.write(ent)
             st.subheader(info)
         st.caption(info)
+
         st.caption("Coordinates :"+ str(coor))
+        st.map(df,use_container_width=True)
+
         openai.api_key =  os.getenv("OPENAI_API_KEY")
         resp = openai.Completion.create(
         model="text-davinci-003",
@@ -124,7 +127,6 @@ if img is not None:
         )
         st.write(resp.choices[0].text)
         st.subheader("Explore loaction in Maps")
-        st.map(df,use_container_width=True)
 
 
 
