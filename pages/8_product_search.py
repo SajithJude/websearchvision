@@ -7,7 +7,7 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 
-st.title('OCR text Detection')
+st.title('Image Recognition')
 cam = st.radio('Please select an option',('Open Webcam', 'Upload Image'))
 # upload = st.checkbox('Upload an Image')
 
@@ -27,7 +27,7 @@ def callAPI(image):
                 },
                 'features':[
                     {
-                        'type':'PRODUCT_SEARCH',
+                        'type':'WEB_DETECTION',
                         'maxResults':5
                     }
                 ]
