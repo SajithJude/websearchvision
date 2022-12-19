@@ -162,6 +162,30 @@ if __name__ == "__main__":
                 st.image(img)
                 st.caption("Text Recognized")
                 st.write(info)
+                sourceLang = 'en'
+
+                # Specify the target language 
+                targetLang = 'es'
+
+                # Google Translate API URL 
+                apiUrl = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl={}&tl={}&dt=t&q={}'
+
+                # Form the request URL 
+                requestUrl = apiUrl.format(sourceLang, targetLang, info)
+
+                # Make the request and get the response 
+                response = requests.get(requestUrl)
+
+                # Get the translated text from the response 
+                translatedText = response.json()
+                
+                # Print the translated text 
+                st.write(translatedText)
+                # st.write("""
+                # #API response Body
+                # """)
+                # st.write(result) 
+
 
             except: 
                 st.write("An exception occurred")
