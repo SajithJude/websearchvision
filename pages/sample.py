@@ -7,12 +7,16 @@ def render():
   if expanded:
     st.markdown(
       """
+
+
+
+
       <div class="footer">
         <p>&copy; 2020 Company</p>
-        <div>
+    
           <a href="www.company.com/about">About</a>
           <a href="www.company.com/contact">Contact</a>
-        </div>
+
       </div>
       """
     , unsafe_allow_html=True)
