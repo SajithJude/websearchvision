@@ -77,7 +77,8 @@ if img_file_buffer is not None:
             st.header("In Anger")
             st.write(annotation['angerLikelihood']) 
 
-        x = render() 
+    
+    x = render() 
          
 
 
