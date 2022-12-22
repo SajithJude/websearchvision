@@ -14,17 +14,12 @@ if img_file_buffer is not None:
     # Check the type of bytes_data:
     # Should output: <class 'bytes'>
     st.write(type(bytes_data))
-    
-
     # The GCP Vision API URL 
     vision_url = 'https://vision.googleapis.com/v1/images:annotate?key='
 
     # Your Google Cloud Platform (GCP) API KEY. Generate one on cloud.google.com
     api_key = os.environ["API_KEY"] 
     # Load your image as a base64 encoded string
-
-
-    
     encoded_image = base64.b64encode(img_file_buffer.read())
 
     # Generate a post request for GCP vision Annotation
@@ -75,8 +70,3 @@ if img_file_buffer is not None:
     with col4:
         st.header("In Anger")
         st.write(annotation['angerLikelihood'])   
-        # st.image("https://static.streamlit.io/examples/owl.jpg")
-    # st.write("Suprised :")
-    # st.write("Joy :")
-    # st.write("Sorrow :")
-    # # st.write(json.dumps(response_data, indent=4))
