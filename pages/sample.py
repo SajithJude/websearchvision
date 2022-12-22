@@ -42,7 +42,7 @@ with placeholder:
 </div>
 </div>
         """,
-        height=200,
+        height=400,
     )
 
 if st.button("Clear me"):
