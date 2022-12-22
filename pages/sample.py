@@ -52,30 +52,30 @@ if img_file_buffer is not None:
     annotation = response_data['responses'][0]['faceAnnotations'][0]
     # Printing the response, in this case it will return all the labels that are 
     # identified in the image
-    def render():
+    # def render():
 
-        col1, col2, col3 , col4= st.columns(4)
+    #     col1, col2, col3 , col4= st.columns(4)
 
-        with col1:
-            st.header("Suprised")
-            st.write(annotation['surpriseLikelihood'])
+    #     with col1:
+    #         st.header("Suprised")
+    #         st.write(annotation['surpriseLikelihood'])
 
-            # st.image("https://static.streamlit.io/examples/cat.jpg")
+    #         # st.image("https://static.streamlit.io/examples/cat.jpg")
 
-        with col2:
-            st.header("In Joy")
-            st.write(annotation['joyLikelihood'])    
+    #     with col2:
+    #         st.header("In Joy")
+    #         st.write(annotation['joyLikelihood'])    
 
 
-            # st.image("https://static.streamlit.io/examples/dog.jpg")
+    #         # st.image("https://static.streamlit.io/examples/dog.jpg")
 
-        with col3:
-            st.header("In Sorrow")
-            st.write(annotation['sorrowLikelihood'])  
+    #     with col3:
+    #         st.header("In Sorrow")
+    #         st.write(annotation['sorrowLikelihood'])  
 
-        with col4:
-            st.header("In Anger")
-            st.write(annotation['angerLikelihood']) 
+    #     with col4:
+    #         st.header("In Anger")
+    #         st.write(annotation['angerLikelihood']) 
 
     
     # x = annotation['angerLikelihood']
@@ -83,7 +83,7 @@ if img_file_buffer is not None:
 
 
 
-        components.html(
+    components.html(
                     """
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
