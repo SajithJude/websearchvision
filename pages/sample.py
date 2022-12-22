@@ -52,29 +52,33 @@ if img_file_buffer is not None:
     annotation = response_data['responses'][0]['faceAnnotations'][0]
     # Printing the response, in this case it will return all the labels that are 
     # identified in the image
+    def render():
 
-    col1, col2, col3 , col4= st.columns(4)
+        col1, col2, col3 , col4= st.columns(4)
 
-    with col1:
-        st.header("Suprised")
-        st.write(annotation['surpriseLikelihood'])
+        with col1:
+            st.header("Suprised")
+            st.write(annotation['surpriseLikelihood'])
 
-        # st.image("https://static.streamlit.io/examples/cat.jpg")
+            # st.image("https://static.streamlit.io/examples/cat.jpg")
 
-    with col2:
-        st.header("In Joy")
-        st.write(annotation['joyLikelihood'])    
+        with col2:
+            st.header("In Joy")
+            st.write(annotation['joyLikelihood'])    
 
 
-        # st.image("https://static.streamlit.io/examples/dog.jpg")
+            # st.image("https://static.streamlit.io/examples/dog.jpg")
 
-    with col3:
-        st.header("In Sorrow")
-        st.write(annotation['sorrowLikelihood'])  
+        with col3:
+            st.header("In Sorrow")
+            st.write(annotation['sorrowLikelihood'])  
 
-    with col4:
-        st.header("In Anger")
-        st.write(annotation['angerLikelihood'])   
+        with col4:
+            st.header("In Anger")
+            st.write(annotation['angerLikelihood']) 
+
+        x = render() 
+         
 
 
 
@@ -85,7 +89,7 @@ components.html(
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <div id="accordion">
 <div class="card">
-
+    {{x}}
     sample info
     <!-- <div class="card-header" id="headingOne">
     <h5 class="mb-0">
