@@ -78,7 +78,7 @@ if img_file_buffer is not None:
             st.write(annotation['angerLikelihood']) 
 
     
-    x = render() 
+    # x = annotation['angerLikelihood']
          
 
 
@@ -90,7 +90,7 @@ components.html(
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <div id="accordion">
 <div class="card">
-    {x}
+    {{annotation['angerLikelihood']}}
     
     <!-- <div class="card-header" id="headingOne">
     <h5 class="mb-0">
