@@ -16,7 +16,7 @@ m = st.markdown("""
         div.stButton > button:first-child {
             background-color: #BFD731;
             font-weight: 400;
-            width=100px;
+            width=100%;
             font-size:80px;
             color:#000000;
             border-radius:20px 20px 20px 20px; 
@@ -28,7 +28,7 @@ m = st.markdown("""
         div.element-container {
             width : 80px;
         }
-        div.row-widget {
+        div.row-widget > button {
             width : 80px;
         }
 
