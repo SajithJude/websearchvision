@@ -29,8 +29,7 @@ def layout(*args):
     <style>
       # MainMenu {visibility: hidden;}
       footer {visibility: hidden;}
-     .stApp { bottom: 105px; }
-     # body 
+     .stApp { bottom: 105px; } 
     </style>
     """
 
@@ -101,8 +100,10 @@ def layout(*args):
 
 def footer():
     myargs = [
-        image("rect.png",width=px(25), height=px(25)),
-        image("rect.png",width=px(25), height=px(25)),
+        image("rect.png",width=px(100), height=px(60)),
+        br(),
+        image("rect.png",width=px(100), height=px(60)),
+        br(),
         link("www.instancy.com","Instancy Inc"),
         br(),
     ]
