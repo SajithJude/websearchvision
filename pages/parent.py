@@ -36,14 +36,14 @@ col1,col2 = st.columns([1,1])
 with st.container():
     
     with col1:
-        x= st.button('Photo')
-        if x:
+        # x= st.button('Photo')
+        if st.button('Photo'):
             st.write("hdhdh")
             
 with st.container():
 
     with col2:
-        y = st.button("Clear")
-        if y:
+        # y = st.button("Clear")
+        if st.button("Clear"):
             st.write("sdsdd")
 
