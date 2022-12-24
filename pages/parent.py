@@ -114,6 +114,7 @@ def layout(*args):
 #     layout(*myargs)
 
 def footer():
+    
     # m = st.markdown("""
     #     <style>
     #     div.stButton > button:first-child {
@@ -133,7 +134,7 @@ def footer():
     
     # b = st.button("📸 Photo")
     myargs = [
-        st.write(m),
+        
         # with open('footer_st_logo.png', 'rb') as f:
         #     img_logo = f.read()
         # im =  Image.open("images.png")
@@ -157,13 +158,13 @@ if __name__ == "__main__":
 #         layout="wide",
 #     )
 #     # st.set_theme('primary_color', primary_color='#BFD731')
-#     col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
 
-#     with col1:
-#         st.write('     ')
+    with col1:
+        x= st.button('Photo')
 
-#     with col2:
-#         st.title("Home")
+    with col2:
+        y = st.title("Clear")
 
 #     with col3:
 #         st.write('     ')
