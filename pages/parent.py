@@ -101,9 +101,9 @@ def layout(*args):
 
 def footer():
     myargs = [
-        image("Rectangle 10.png",width=px(25), height=px(25)),
-        image("Rectangle 10.png",width=px(25), height=px(25)),
-        # link("www.instancy.com","Instancy Inc"),
+        image("rect.png",width=px(25), height=px(25)),
+        image("rect.png",width=px(25), height=px(25)),
+        link("www.instancy.com","Instancy Inc"),
         br(),
     ]
     layout(*myargs)
