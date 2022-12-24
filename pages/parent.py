@@ -98,41 +98,10 @@ def layout(*args):
         </style>""", unsafe_allow_html=True)
     
 
-# def body():
-#     myargs = [
-#         "Home ",
-        
-#         image("images.png",style=styles( position="fixed",
-#         margin=px(0, 0, 0, 0),
-#         width=percent(100),
-#         color="#192A56",
-#         text_align="center",
-#         height="auto",
-#         opacity=1)),
-#         br(),
-#     ]
-#     layout(*myargs)
 
 def footer():
     
-    # m = st.markdown("""
-    #     <style>
-    #     div.stButton > button:first-child {
-    #         background-color: #EBEBEB;
-    #         font-weight: 400;
-    #         font-size:80px;
-    #         color:#000000;
-    #         border-radius:20px 20px 20px 20px; 
-    #     }
-    #     div.stButton > button:hover {
-    #         background-color: #BFD731;
-    #         color:#ffffff;
-    #         }
-    #     </style>""", unsafe_allow_html=True)
 
-    # # im =  Image.open("rect.png")'
-    
-    # b = st.button("📸 Photo")
     myargs = [
         
         # with open('footer_st_logo.png', 'rb') as f:
@@ -150,17 +119,19 @@ def footer():
 
 if __name__ == "__main__":
     footer()
-    col1, col2 = st.columns(2)
+    with st.container():
+        col1, col2 = st.columns(2)
 
-    with col1:
-        x= st.button('Photo')
-        if x:
-            st.write("hdhdh")
-
-    with col2:
-        y = st.button("Clear")
-        if y:
-            st.write("sdsdd")
+        with col1:
+            x= st.button('Photo')
+            if x:
+                st.write("hdhdh")
+                
+    with st.container():
+        with col2:
+            y = st.button("Clear")
+            if y:
+                st.write("sdsdd")
 
 
 #     with col3:
