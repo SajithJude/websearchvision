@@ -99,7 +99,7 @@ def layout(*args):
 #     layout(*myargs)
 
 def footer():
-    im =  Image.open("images.png")
+    im =  Image.open("rect.png")
     myargs = [
 
         st.image(im),
