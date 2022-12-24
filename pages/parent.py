@@ -120,23 +120,16 @@ def footer():
 if __name__ == "__main__":
     footer()
     st.set_page_config( layout="centered")
-    col1, col2,col3 = st.columns(3)
+    
 
-    with col1:
-        with st.container():
+    x= st.button('Photo')
+    if x:
+        st.write("hdhdh")
 
-            x= st.button('Photo')
-            if x:
-                st.write("hdhdh")
-    with col1:
-        with st.container():
-            st.write(" ")            
 
-    with col3:
-        with st.container():
-            y = st.button("Clear",style="background-color: #EBEBEB; color:#000000; border-radius: 20px;")
-            if y:
-                st.write("sdsdd")
+    y = st.button("Clear",style="background-color: #EBEBEB; color:#000000; border-radius: 20px;")
+    if y:
+        st.write("sdsdd")
 
 
 #     with col3:
