@@ -35,7 +35,7 @@ m = st.markdown("""
 # @st.cache(allow_output_mutation=True)
 
 
-col1,col2 = st.columns([2,7])
+col1,col2 = st.columns([0.5,3])
 with col1:
     x= st.button('Photo')
     if x:
