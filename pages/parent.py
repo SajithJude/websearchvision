@@ -104,54 +104,54 @@ def footer():
 if __name__ == "__main__":
     
 
-    im = Image.open("images.png")
-    st.set_page_config(
-        page_title="Instancy",
-        page_icon=im,
-        layout="wide",
-    )
-    # st.set_theme('primary_color', primary_color='#BFD731')
-    col1, col2, col3 = st.columns(3)
+#     im = Image.open("images.png")
+#     st.set_page_config(
+#         page_title="Instancy",
+#         page_icon=im,
+#         layout="wide",
+#     )
+#     # st.set_theme('primary_color', primary_color='#BFD731')
+#     col1, col2, col3 = st.columns(3)
 
-    with col1:
-        st.write('     ')
+#     with col1:
+#         st.write('     ')
 
-    with col2:
-        st.title("Home")
+#     with col2:
+#         st.title("Home")
 
-    with col3:
-        st.write('     ')
+#     with col3:
+#         st.write('     ')
 
-    cols1, cols2, cols3 = st.columns(3)
+#     cols1, cols2, cols3 = st.columns(3)
 
-    with cols1:
-        st.write(' ')
+#     with cols1:
+#         st.write(' ')
 
-    with cols2:
-        st.image(im)
-
-
-    with cols3:
-        st.write(' ') 
+#     with cols2:
+#         st.image(im)
 
 
+#     with cols3:
+#         st.write(' ') 
 
 
-    st.subheader(
-        """
-Augmented Reality Demos
-        """
-    )
+
+
+#     st.subheader(
+#         """
+# Augmented Reality Demos
+#         """
+#     )
 
     
 
 
-    st.caption(
-    """
-    Click on the Menu to select an augmented reality Scenario.
-    """
-)
-
+#     st.caption(
+#     """
+#     Click on the Menu to select an augmented reality Scenario.
+#     """
+# )
+    body()
     # st.write("www.instancy.com")
     footer()
 
