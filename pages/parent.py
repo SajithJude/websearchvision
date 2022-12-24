@@ -95,7 +95,7 @@ def layout(*args):
             color:#ffffff;
             }
 
-        div[class^="css-x9tmkl" ]
+        div[class^="css-u9atj4" ]
         {  width: 180px;
         position: relative;}
         
