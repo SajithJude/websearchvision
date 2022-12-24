@@ -119,16 +119,19 @@ def footer():
 
 if __name__ == "__main__":
     footer()
-    with st.container():
-        col1, col2 = st.columns(2)
+    
+    col1, col2 = st.columns(2)
 
-        with col1:
+    with col1:
+        with st.container():
+
             x= st.button('Photo')
             if x:
                 st.write("hdhdh")
                 
-    with st.container():
-        with col2:
+
+    with col2:
+        with st.container():
             y = st.button("Clear")
             if y:
                 st.write("sdsdd")
