@@ -118,7 +118,7 @@ def footer():
     
     b = st.button("📸 Photo")
     myargs = [
-
+        m,
         # with open('footer_st_logo.png', 'rb') as f:
         #     img_logo = f.read()
         # im =  Image.open("images.png")
