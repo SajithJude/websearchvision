@@ -164,7 +164,7 @@ if __name__ == "__main__":
         x= st.button('Photo')
 
     with col2:
-        y = st.title("Clear")
+        y = st.button("Clear")
 
 #     with col3:
 #         st.write('     ')
