@@ -127,7 +127,7 @@ if __name__ == "__main__":
         st.write("hdhdh")
 
 
-    y = st.button("Clear",style="background-color: #EBEBEB; color:#000000; border-radius: 20px;")
+    y = st.button("Clear")
     if y:
         st.write("sdsdd")
 
