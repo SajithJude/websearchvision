@@ -11,7 +11,6 @@ from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, class
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
 
-st.markdown(str(foot), unsafe_allow_html=True)
 m = st.markdown("""
         <style>
         div.stButton > button:first-child {
@@ -115,6 +114,7 @@ def layout(*args):
             body(arg)
 
     
+    st.markdown(str(foot), unsafe_allow_html=True)
     
 
 
