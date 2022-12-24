@@ -113,7 +113,7 @@ def footer():
 
     # im =  Image.open("rect.png")'
     
-    b = st.button("点我开始运行程序")
+    b = st.button("📸 Photo")
     myargs = [
 
         # with open('footer_st_logo.png', 'rb') as f:
