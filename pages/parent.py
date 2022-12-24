@@ -31,19 +31,15 @@ m = st.markdown("""
 # @st.cache(allow_output_mutation=True)
 
 
-col1,col2 ,col3= st.columns([1,1,1])
+col1,col2 = st.columns([0.5,1])
 with col1:
     x= st.button('Photo')
     if x:
         st.write("hdhdh")
 
 with col2:
-    y = st.button("Cljear")
+    y = st.button("Clear")
     if y:
-        st.write("sdsdd")
-with col3:
-    d = st.button("Clear")
-    if d:
         st.write("sdsdd")
 
 
@@ -67,10 +63,9 @@ def layout(*args):
 
     style_div = styles(
         position="fixed",
-        right=0,
-        top=10,
-
-        
+        left=0,
+        bottom=0,
+        margin=px(0, 0, 0, 0),
         width=percent(100),
         color="#192A56",
         text_align="center",
@@ -79,7 +74,7 @@ def layout(*args):
 
     style_hr = styles(
         display="block",
-        
+        margin=px("auto", "auto", "auto", "auto"),
         border_style="insert",
         border_width=px(1)
     )
