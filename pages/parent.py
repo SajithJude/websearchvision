@@ -36,15 +36,15 @@ m = st.markdown("""
         </style>""", unsafe_allow_html=True)
 # @st.cache(allow_output_mutation=True)
 
-with st.container():
-        col1,col2 = st.columns([1,12])
-        with col1:
-            x= st.button('Photo')
-            if x:
-                st.write("hdhdh")
 
-        with col2:
-            y = st.button("Clear")
-            if y:
-                st.write("sdsdd")
+col1,col2 = st.columns([1,12])
+with col1:
+    x= st.button('Photo')
+    if x:
+        st.write("hdhdh")
+
+with col2:
+    y = st.button("Clear")
+    if y:
+        st.write("sdsdd")
 
