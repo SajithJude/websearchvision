@@ -120,7 +120,7 @@ def footer():
 if __name__ == "__main__":
     footer()
     st.set_page_config( layout="centered")
-    col1, col2,col3 = st.columns(1,2,1)
+    col1, col2,col3 = st.columns(3)
 
     with col1:
         with st.container():
