@@ -53,7 +53,17 @@ def layout(*args):
         border_width=px(2)
     )
 
-    body = p()
+    body = p(
+        id='myFooter',
+        style=styles(
+            margin=px(0, 0, 0, 0),
+            # 通过调整padding自行调整上下边距以达到满意效果
+            padding=px(5),
+            # 调整字体大小
+            font_size="0.8rem",
+            color="rgb(51,51,51)"
+        )
+    )
     foot = div(
         style=style_div
     )(
@@ -74,22 +84,20 @@ def layout(*args):
 
     st.markdown(str(foot), unsafe_allow_html=True)
 
-def body():
-    myargs = [
-        "Home ",
+# def body():
+#     myargs = [
+#         "Home ",
         
-        image("images.png",style=styles( position="fixed",
-        left=0,
-        bottom=0,
-        margin=px(0, 0, 0, 0),
-        width=percent(100),
-        color="#192A56",
-        text_align="center",
-        height="auto",
-        opacity=1)),
-        br(),
-    ]
-    layout(*myargs)
+#         image("images.png",style=styles( position="fixed",
+#         margin=px(0, 0, 0, 0),
+#         width=percent(100),
+#         color="#192A56",
+#         text_align="center",
+#         height="auto",
+#         opacity=1)),
+#         br(),
+#     ]
+#     layout(*myargs)
 
 def footer():
     myargs = [
@@ -151,7 +159,7 @@ if __name__ == "__main__":
 #     Click on the Menu to select an augmented reality Scenario.
 #     """
 # )
-    body()
+    # body()
     # st.write("www.instancy.com")
     footer()
 
