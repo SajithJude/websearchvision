@@ -38,7 +38,7 @@ def layout(*args):
         # left=0,
         bottom=0,
         margin=px(0, 0, 0, 0),
-        width=percent(50),
+        width=percent(100),
         color="#192A56",
         text_align="center",
         height=px(380),
@@ -95,10 +95,6 @@ def layout(*args):
             background-color: #EBEBEB;
             color:#ffffff;
             }
-        div.row-widget > row-widget{
-            width:50%
-
-        }
         </style>""", unsafe_allow_html=True)
     
 
@@ -124,7 +120,7 @@ def footer():
 if __name__ == "__main__":
     footer()
     # st.set_page_config( layout="centered")
-    
+    wid
 
     x= st.button('Photo')
     if x:
