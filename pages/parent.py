@@ -112,7 +112,7 @@ if __name__ == "__main__":
         st.write(' ')
 
     with cols2:
-        st.image('https://cdn-apinb.nitrocdn.com/LGFQTZTBRQFYZkDHnBAkeTYvUEPBCNKO/assets/static/optimized/rev-f886686/wp-content/uploads/2022/11/logo-instancy.png')
+        st.image(im)
 
 
     with cols3:
