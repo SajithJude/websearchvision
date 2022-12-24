@@ -30,17 +30,17 @@ m = st.markdown("""
         </style>""", unsafe_allow_html=True)
 # @st.cache(allow_output_mutation=True)
 
+with st.container():
+        col1,col2 = st.columns([1,12])
+        with col1:
+            x= st.button('Photo')
+            if x:
+                st.write("hdhdh")
 
-col1,col2 = st.columns([0.5,1])
-with col1:
-    x= st.button('Photo')
-    if x:
-        st.write("hdhdh")
-
-with col2:
-    y = st.button("Clear")
-    if y:
-        st.write("sdsdd")
+        with col2:
+            y = st.button("Clear")
+            if y:
+                st.write("sdsdd")
 
 
 def image(src_as_string, **style):
@@ -66,7 +66,7 @@ def layout(*args):
         left=0,
         bottom=0,
         margin=px(0, 0, 0, 0),
-        width=percent(100),
+        width=percent(50),
         color="#192A56",
         text_align="center",
         opacity=1
@@ -82,8 +82,11 @@ def layout(*args):
     body = div(
        
         style=styles(
-        position="absolute",
-        width=percent(50),
+        position="fixed",
+        left=0,
+        bottom=0,
+        margin=px(0, 0, 0, 0),
+        width=percent(100),
         color="#192A56",
         text_align="center",
         opacity=1
