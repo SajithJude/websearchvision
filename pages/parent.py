@@ -17,6 +17,7 @@ m = st.markdown("""
             width=100px
             font-size:80px;
             color:#000000;
+            position:relative;left:50%;
             border-radius:20px 20px 20px 20px; 
         }
         div.stButton > button:hover {
