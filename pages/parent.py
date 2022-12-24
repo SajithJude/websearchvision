@@ -25,9 +25,7 @@ m = st.markdown("""
             color:#ffffff;
             }
 
-        div[class^="css-u9atj4" ]
-        {  width: 180px;
-        position: relative;}
+
         
         </style>""", unsafe_allow_html=True)
 # @st.cache(allow_output_mutation=True)
@@ -88,7 +86,7 @@ def layout(*args):
         left=0,
         bottom=0,
         margin=px(0, 0, 0, 0),
-        width=percent(100),
+        width=percent(10),
         color="#192A56",
         text_align="center",
         opacity=1
