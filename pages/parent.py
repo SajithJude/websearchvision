@@ -83,7 +83,7 @@ def layout(*args):
        
         style=styles(
         position="absolute",
-        width=percent(100),
+        width=percent(50),
         color="#192A56",
         text_align="center",
         opacity=1
