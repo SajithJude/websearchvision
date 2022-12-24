@@ -36,13 +36,13 @@ def layout(*args):
 
     style_div = styles(
         position="fixed",
-        left=0,
+        # left=0,
         bottom=0,
         margin=px(0, 0, 0, 0),
         width=percent(100),
         color="#192A56",
         text_align="center",
-        height="auto",
+        height=px(300),
         opacity=1
     )
 
@@ -53,15 +53,15 @@ def layout(*args):
         border_width=px(2)
     )
 
-    body = p(
-        id='myFooter',
+    body = div(
+       
         style=styles(
             margin=px(0, 0, 0, 0),
             # 通过调整padding自行调整上下边距以达到满意效果
             padding=px(5),
             # 调整字体大小
-            font_size="0.8rem",
-            color="rgb(51,51,51)"
+            font_size="0.8rem"
+            
         )
     )
     foot = div(
@@ -101,8 +101,8 @@ def layout(*args):
 
 def footer():
     myargs = [
-        "Made with ❤️ from ",
-        
+        image("Rectangle 10.png"),
+        image("Rectangle 10.png"),
         link("www.instancy.com","Instancy Inc"),
         br(),
     ]
