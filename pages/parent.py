@@ -25,10 +25,12 @@ m = st.markdown("""
             background-color: #EBEBEB;
             color:#ffffff;
             }
-        div.element-container {
+        div.element-container.css-1qipp0u.e1tzin5v3 {
             width : 50%;
         }
-        
+        div.row-widget.stButton {
+            width : 50%;
+        }
 
         
         </style>""", unsafe_allow_html=True)
