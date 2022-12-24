@@ -149,16 +149,7 @@ def footer():
 
 
 if __name__ == "__main__":
-
-    
-
-#     im = Image.open("images.png")
-#     st.set_page_config(
-#         page_title="Instancy",
-#         page_icon=im,
-#         layout="wide",
-#     )
-#     # st.set_theme('primary_color', primary_color='#BFD731')
+    footer()
     col1, col2 = st.columns(2)
 
     with col1:
@@ -206,7 +197,7 @@ if __name__ == "__main__":
 # )
     # body()
     # st.write("www.instancy.com")
-    footer()
+    
 
 
 
