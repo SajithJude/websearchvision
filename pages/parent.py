@@ -87,7 +87,7 @@ def layout(*args):
         div.stButton > button:first-child {
             background-color: #BFD731;
             font-weight: bold;
-            font-size:20px;
+            font-size:80px;
             color:#000000;
             border-radius:20px 20px 20px 20px; 
         }
