@@ -74,6 +74,22 @@ def layout(*args):
 
     st.markdown(str(foot), unsafe_allow_html=True)
 
+def body():
+    myargs = [
+        "Home ",
+        
+        image("images.png",style=styles( position="fixed",
+        left=0,
+        bottom=0,
+        margin=px(0, 0, 0, 0),
+        width=percent(100),
+        color="#192A56",
+        text_align="center",
+        height="auto",
+        opacity=1)),
+        br(),
+    ]
+    layout(*myargs)
 
 def footer():
     myargs = [
