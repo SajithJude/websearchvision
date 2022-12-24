@@ -102,13 +102,13 @@ def footer():
     im =  Image.open("images.png")
     myargs = [
 
-        image(im),
+        st.image(im),
 
         # with open('footer_st_logo.png', 'rb') as f:
         #     img_logo = f.read()
         # im =  Image.open("images.png")
         br(),
-        image(im),
+        st.image(im),
 
         br(),
         link("www.instancy.com","Instancy Inc"),
