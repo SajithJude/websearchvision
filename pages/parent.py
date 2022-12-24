@@ -102,7 +102,7 @@ def footer():
     im =  Image.open("rect.png")
     myargs = [
 
-        st.markdown(st.image(im)),
+        st.markdown(""" div.stButton > button:first-child {background-color: ##BFD731;color:black;font-size:20px;height:63px;width:100px;border-radius:10px 10px 10px 10px;}""", unsafe_allow_html=True),
 
         # with open('footer_st_logo.png', 'rb') as f:
         #     img_logo = f.read()
