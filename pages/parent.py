@@ -28,7 +28,7 @@ m = st.markdown("""
         div.element-container.css-1qipp0u.e1tzin5v3 {
             width : 50%;
         }
-        .row-widget.stButton {
+        .row-widget stButton {
             width : 5%;
         }
 
