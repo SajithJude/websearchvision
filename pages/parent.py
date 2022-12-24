@@ -149,6 +149,7 @@ def footer():
 
 
 if __name__ == "__main__":
+
     
 
 #     im = Image.open("images.png")
@@ -162,9 +163,14 @@ if __name__ == "__main__":
 
     with col1:
         x= st.button('Photo')
+        if x:
+            st.write("hdhdh")
 
     with col2:
         y = st.button("Clear")
+        if y:
+            st.write("sdsdd")
+
 
 #     with col3:
 #         st.write('     ')
