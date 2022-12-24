@@ -88,6 +88,7 @@ def layout(*args):
             background-color: #BFD731;
             font-weight: bold
             color:#000000;
+            border-radius:20px 20px 20px 20px; 
         }
         div.stButton > button:hover {
             background-color: #BFD731;
