@@ -95,6 +95,10 @@ def layout(*args):
             background-color: #EBEBEB;
             color:#ffffff;
             }
+        div.row-widget > row-widget{
+            width:50%
+
+        }
         </style>""", unsafe_allow_html=True)
     
 
