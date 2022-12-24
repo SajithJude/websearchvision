@@ -40,8 +40,8 @@ with st.container():
         if x:
             st.write("hdhdh")
 
-with col2:
-    y = st.button("Clear")
-    if y:
-        st.write("sdsdd")
+    with col2:
+        y = st.button("Clear")
+        if y:
+            st.write("sdsdd")
 
