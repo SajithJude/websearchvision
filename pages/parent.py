@@ -39,6 +39,8 @@ with st.container():
         x= st.button('Photo')
         if x:
             st.write("hdhdh")
+            
+with st.container():
 
     with col2:
         y = st.button("Clear")
