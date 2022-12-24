@@ -28,8 +28,8 @@ m = st.markdown("""
         div.element-container.css-1qipp0u.e1tzin5v3 {
             width : 50%;
         }
-        .row-widget stButton {
-            width : 5%;
+        .css-184ep1k {
+            flex-direction : row;
         }
 
         
