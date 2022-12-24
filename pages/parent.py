@@ -120,7 +120,7 @@ def footer():
 if __name__ == "__main__":
     footer()
     
-    col1, col2,col3 = st.columns(3)
+    col1, col2,col3 = st.columns(1,2,1)
 
     with col1:
         with st.container():
