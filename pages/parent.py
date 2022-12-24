@@ -28,6 +28,9 @@ m = st.markdown("""
         div.element-container {
             width : 80px;
         }
+        div.row-widget {
+            width : 80px;
+        }
 
 
         
