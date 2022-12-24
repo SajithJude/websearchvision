@@ -25,7 +25,7 @@ m = st.markdown("""
             background-color: #EBEBEB;
             color:#ffffff;
             }
-        div.row-widget.stButton {
+        div.element-container.css-1qipp0u.e1tzin5v3 {
             width : 50%;
         }
         
