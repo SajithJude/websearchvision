@@ -42,7 +42,7 @@ def layout(*args):
         width=percent(100),
         color="#192A56",
         text_align="center",
-        height=px(300),
+        height=px(3850),
         opacity=1
     )
 
@@ -101,8 +101,8 @@ def layout(*args):
 
 def footer():
     myargs = [
-        image("Rectangle 10.png"),
-        image("Rectangle 10.png"),
+        image("Rectangle 10.png",width=px(25), height=px(25)),
+        image(",Rectangle 10.png",width=px(25), height=px(25)),
         link("www.instancy.com","Instancy Inc"),
         br(),
     ]
