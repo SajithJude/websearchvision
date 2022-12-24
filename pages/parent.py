@@ -30,17 +30,17 @@ m = st.markdown("""
         </style>""", unsafe_allow_html=True)
 # @st.cache(allow_output_mutation=True)
 
-with st.container():
-        col1,col2 = st.columns([0.5,1])
-        with col1:
-            x= st.button('Photo')
-            if x:
-                st.write("hdhdh")
 
-        with col2:
-            y = st.button("Clear")
-            if y:
-                st.write("sdsdd")
+col1,col2 = st.columns([0.5,1])
+with col1:
+    x= st.button('Photo')
+    if x:
+        st.write("hdhdh")
+
+with col2:
+    y = st.button("Clear")
+    if y:
+        st.write("sdsdd")
 
 
 def image(src_as_string, **style):
