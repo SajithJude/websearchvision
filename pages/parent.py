@@ -29,7 +29,7 @@ m = st.markdown("""
             width : 50%;
         }
         div.row-widget.stButton {
-            width : 50%;
+            width : 5%;
         }
 
         
