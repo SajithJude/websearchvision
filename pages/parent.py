@@ -134,7 +134,7 @@ if __name__ == "__main__":
 
     with col3:
         with st.container():
-            y = st.button("Clear")
+            y = st.button("Clear",style="background-color: #EBEBEB; color:#000000; border-radius: 20px;")
             if y:
                 st.write("sdsdd")
 
