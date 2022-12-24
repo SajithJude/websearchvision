@@ -102,7 +102,7 @@ def footer():
     im =  Image.open("rect.png")
     myargs = [
 
-        st.markdown(im),
+        st.markdown(st.image(im)),
 
         # with open('footer_st_logo.png', 'rb') as f:
         #     img_logo = f.read()
