@@ -86,6 +86,7 @@ def layout(*args):
         <style>
         div.stButton > button:first-child {
             background-color: #BFD731;
+            font-weight: bold
             color:#000000;
         }
         div.stButton > button:hover {
