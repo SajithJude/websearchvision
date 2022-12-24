@@ -31,7 +31,7 @@ m = st.markdown("""
 # @st.cache(allow_output_mutation=True)
 
 
-col1,col2 = st.columns([0.5,1])
+col1,col2 ,col3= st.columns([1,1,1])
 with col1:
     x= st.button('Photo')
     if x:
@@ -40,6 +40,10 @@ with col1:
 with col2:
     y = st.button("Clear")
     if y:
+        st.write("sdsdd")
+with col3:
+    d = st.button("Clear")
+    if d:
         st.write("sdsdd")
 
 
