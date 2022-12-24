@@ -95,6 +95,11 @@ def layout(*args):
             background-color: #EBEBEB;
             color:#ffffff;
             }
+
+        div[class^= "css-x9tmkl" 
+        {  width: 180px;
+        position: relative;}
+        ]
         </style>""", unsafe_allow_html=True)
     
 
