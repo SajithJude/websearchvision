@@ -127,7 +127,7 @@ if __name__ == "__main__":
     # st.set_page_config( layout="centered")
     # wid
     with st.container():
-        col1,col2 = st.beta_columns(2)
+        col1,col2 = st.columns(2)
         with col1:
             x= st.button('Photo')
             if x:
