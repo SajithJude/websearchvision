@@ -38,7 +38,7 @@ with col1:
         st.write("hdhdh")
 
 with col2:
-    y = st.button("Clear")
+    y = st.button("Clhhhear")
     if y:
         st.write("sdsdd")
 with col3:
