@@ -99,16 +99,16 @@ def layout(*args):
 #     layout(*myargs)
 
 def footer():
-    im =  Image.open("rect.png")
+    # im =  Image.open("rect.png")
     myargs = [
 
-        st.image(im),
+        st.markdown(image("rect.png")),
 
         # with open('footer_st_logo.png', 'rb') as f:
         #     img_logo = f.read()
         # im =  Image.open("images.png")
         br(),
-        st.image(im),
+        # st.image(im),
 
         br(),
         link("www.instancy.com","Instancy Inc"),
