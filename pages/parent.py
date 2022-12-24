@@ -12,7 +12,7 @@ from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
 
 st.markdown(str(foot), unsafe_allow_html=True)
-    m = st.markdown("""
+m = st.markdown("""
         <style>
         div.stButton > button:first-child {
             background-color: #BFD731;
