@@ -38,7 +38,7 @@ with col1:
         st.write("hdhdh")
 
 with col2:
-    y = st.button("Clhhhear")
+    y = st.button("Cljear")
     if y:
         st.write("sdsdd")
 with col3:
@@ -78,7 +78,7 @@ def layout(*args):
 
     style_hr = styles(
         display="block",
-        margin=px("auto", "auto", "auto", "auto"),
+        
         border_style="insert",
         border_width=px(1)
     )
@@ -86,6 +86,8 @@ def layout(*args):
     body = div(
        
         style=styles(
+        position="absolute",
+        width=percent(50),
         color="#192A56",
         text_align="center",
         opacity=1
