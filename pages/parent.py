@@ -88,7 +88,7 @@ def layout(*args):
         left=0,
         bottom=0,
         margin=px(0, 0, 0, 0),
-        width=percent(50),
+        width=percent(10),
         color="#192A56",
         text_align="center",
         opacity=1
