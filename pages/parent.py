@@ -85,12 +85,12 @@ def layout(*args):
     m = st.markdown("""
         <style>
         div.stButton > button:first-child {
-            background-color: #0099ff;
-            color:#ffffff;
+            background-color: #BFD731;
+            color:#000000;
         }
         div.stButton > button:hover {
-            background-color: #00ff00;
-            color:#ff0000;
+            background-color: #BFD731;
+            color:#ffffff;
             }
         </style>""", unsafe_allow_html=True)
 
