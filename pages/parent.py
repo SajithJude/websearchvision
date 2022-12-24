@@ -120,7 +120,7 @@ def footer():
 if __name__ == "__main__":
     footer()
     # st.set_page_config( layout="centered")
-    wid
+    # wid
 
     x= st.button('Photo')
     if x:
