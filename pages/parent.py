@@ -96,6 +96,7 @@ def layout(*args):
             color:#ffffff;
             }
         </style>""", unsafe_allow_html=True)
+    st.write(m)
 
 # def body():
 #     myargs = [
@@ -113,24 +114,24 @@ def layout(*args):
 #     layout(*myargs)
 
 def footer():
-    m = st.markdown("""
-        <style>
-        div.stButton > button:first-child {
-            background-color: #EBEBEB;
-            font-weight: 400;
-            font-size:80px;
-            color:#000000;
-            border-radius:20px 20px 20px 20px; 
-        }
-        div.stButton > button:hover {
-            background-color: #BFD731;
-            color:#ffffff;
-            }
-        </style>""", unsafe_allow_html=True)
+    # m = st.markdown("""
+    #     <style>
+    #     div.stButton > button:first-child {
+    #         background-color: #EBEBEB;
+    #         font-weight: 400;
+    #         font-size:80px;
+    #         color:#000000;
+    #         border-radius:20px 20px 20px 20px; 
+    #     }
+    #     div.stButton > button:hover {
+    #         background-color: #BFD731;
+    #         color:#ffffff;
+    #         }
+    #     </style>""", unsafe_allow_html=True)
 
-    # im =  Image.open("rect.png")'
+    # # im =  Image.open("rect.png")'
     
-    b = st.button("📸 Photo")
+    # b = st.button("📸 Photo")
     myargs = [
         st.write(m),
         # with open('footer_st_logo.png', 'rb') as f:
