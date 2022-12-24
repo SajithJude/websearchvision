@@ -7,9 +7,7 @@ import base64
 from PIL import Image
 
 import streamlit as st
-from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, classes, fonts
-from htbuilder.units import percent, px
-from htbuilder.funcs import rgba, rgb
+
 
 m = st.markdown("""
         <style>
