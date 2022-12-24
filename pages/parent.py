@@ -11,8 +11,39 @@ from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, class
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
 
+st.markdown(str(foot), unsafe_allow_html=True)
+    m = st.markdown("""
+        <style>
+        div.stButton > button:first-child {
+            background-color: #BFD731;
+            font-weight: 400;
+            font-size:80px;
+            color:#000000;
+            border-radius:20px 20px 20px 20px; 
+        }
+        div.stButton > button:hover {
+            background-color: #EBEBEB;
+            color:#ffffff;
+            }
+
+        div[class^="css-u9atj4" ]
+        {  width: 180px;
+        position: relative;}
+        
+        </style>""", unsafe_allow_html=True)
 # @st.cache(allow_output_mutation=True)
 
+with st.container():
+        col1,col2 = st.columns([1,12])
+        with col1:
+            x= st.button('Photo')
+            if x:
+                st.write("hdhdh")
+
+        with col2:
+            y = st.button("Clear")
+            if y:
+                st.write("sdsdd")
 
 
 def image(src_as_string, **style):
@@ -35,7 +66,7 @@ def layout(*args):
 
     style_div = styles(
         position="fixed",
-        # left=0,
+        left=0,
         bottom=0,
         margin=px(0, 0, 0, 0),
         width=percent(100),
@@ -47,20 +78,23 @@ def layout(*args):
     style_hr = styles(
         display="block",
         margin=px("auto", "auto", "auto", "auto"),
-        border_style="inset",
+        border_style="insert",
         border_width=px(1)
     )
 
     body = div(
        
         style=styles(
-            margin=px(0, 0, 0, 0),
-            # 通过调整padding自行调整上下边距以达到满意效果
-            padding=px(5),
-            # 调整字体大小
-            font_size="0.8rem"
-            
-        )
+        position="fixed",
+        left=0,
+        bottom=0,
+        margin=px(0, 0, 0, 0),
+        width=percent(50),
+        color="#192A56",
+        text_align="center",
+        opacity=1
+    )
+
     )
     foot = div(
         style=style_div
@@ -80,26 +114,7 @@ def layout(*args):
         elif isinstance(arg, HtmlElement):
             body(arg)
 
-    st.markdown(str(foot), unsafe_allow_html=True)
-    m = st.markdown("""
-        <style>
-        div.stButton > button:first-child {
-            background-color: #BFD731;
-            font-weight: 400;
-            font-size:80px;
-            color:#000000;
-            border-radius:20px 20px 20px 20px; 
-        }
-        div.stButton > button:hover {
-            background-color: #EBEBEB;
-            color:#ffffff;
-            }
-
-        div[class^="css-u9atj4" ]
-        {  width: 180px;
-        position: relative;}
-        
-        </style>""", unsafe_allow_html=True)
+    
     
 
 
@@ -125,18 +140,7 @@ if __name__ == "__main__":
     footer()
     # st.set_page_config( layout="centered")
     # wid
-    with st.container():
-        col1,col2 = st.columns([1,12])
-        with col1:
-            x= st.button('Photo')
-            if x:
-                st.write("hdhdh")
-
-        with col2:
-            y = st.button("Clear")
-            if y:
-                st.write("sdsdd")
-
+    
 
 #     with col3:
 #         st.write('     ')
