@@ -92,11 +92,11 @@ def layout(*args):
             border-radius:20px 20px 20px 20px; 
         }
         div.stButton > button:hover {
-            background-color: #BFD731;
+            background-color: #EBEBEB;
             color:#ffffff;
             }
         </style>""", unsafe_allow_html=True)
-    st.write(m)
+    
 
 # def body():
 #     myargs = [
