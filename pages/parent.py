@@ -25,6 +25,9 @@ m = st.markdown("""
             background-color: #EBEBEB;
             color:#ffffff;
             }
+        div.element-container {
+            width : 80px;
+        }
 
 
         
