@@ -82,8 +82,17 @@ def layout(*args):
             body(arg)
 
     st.markdown(str(foot), unsafe_allow_html=True)
-    st.markdown("""div.stButton > button:first-child {background-color: ##BFD731;color:black;font-size:20px;height:63px;width:100px;border-radius:10px 10px 10px 10px;}""", unsafe_allow_html=True),
-
+    m = st.markdown("""
+        <style>
+        div.stButton > button:first-child {
+            background-color: #0099ff;
+            color:#ffffff;
+        }
+        div.stButton > button:hover {
+            background-color: #00ff00;
+            color:#ff0000;
+            }
+        </style>""", unsafe_allow_html=True)
 
 # def body():
 #     myargs = [
@@ -104,8 +113,7 @@ def footer():
 
     # im =  Image.open("rect.png")'
     
-    if st.button("camera"):
-        st.write("djddjdjdjdj")
+    b = st.button("点我开始运行程序")
     myargs = [
 
         # with open('footer_st_logo.png', 'rb') as f:
