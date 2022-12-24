@@ -32,7 +32,7 @@ m = st.markdown("""
         </style>""", unsafe_allow_html=True)
 # @st.cache(allow_output_mutation=True)
 
-col1,col2 = st.columns([1,.5])
+col1,col2 = st.columns([1,1])
 with st.container():
     
     with col1:
