@@ -67,9 +67,10 @@ def layout(*args):
 
     style_div = styles(
         position="fixed",
-        left=0,
-        bottom=0,
-        margin=px(0, 0, 0, 0),
+        right=0,
+        top=10,
+
+        
         width=percent(100),
         color="#192A56",
         text_align="center",
